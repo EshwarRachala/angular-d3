@@ -25,10 +25,10 @@ export * from './d3.service';
     SamplePipe
   ]
 })
-export class SampleModule {
+export class D3Module {
   static forRoot(): ModuleWithProviders {
     return {
-      ngModule: SampleModule,
+      ngModule: D3Module,
       providers: [D3Service]
     };
   }
