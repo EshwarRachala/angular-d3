@@ -1,30 +1,26 @@
+import { BarchartGroupedComponent } from './grouped/bar-group.component';
+import { BarchartComponent } from './bar-chart/bar-chart.component';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SampleComponent } from './sample.component';
-import { SampleDirective } from './sample.directive';
-import { SamplePipe } from './sample.pipe';
 import { D3Service } from './d3/d3.service';
 
-export * from './sample.component';
-export * from './sample.directive';
-export * from './sample.pipe';
 export * from './d3/d3.service';
-
 export * from './d3/d3types';
+export * from './bar-chart/bar-chart.component';
+// export * from './line-chart/line-chart.component';
+export * from './grouped/bar-group.component';
 
 @NgModule({
   imports: [
     CommonModule
   ],
   declarations: [
-    SampleComponent,
-    SampleDirective,
-    SamplePipe
+    BarchartComponent,
+    BarchartGroupedComponent
   ],
   exports: [
-    SampleComponent,
-    SampleDirective,
-    SamplePipe
+    BarchartComponent,
+    BarchartGroupedComponent
   ],
   providers: [D3Service]
 })
