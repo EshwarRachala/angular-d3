@@ -3,14 +3,14 @@ import { CommonModule } from '@angular/common';
 import { SampleComponent } from './sample.component';
 import { SampleDirective } from './sample.directive';
 import { SamplePipe } from './sample.pipe';
-import { D3Service } from './d3.service';
+import { D3Service } from './d3/d3.service';
 
 export * from './sample.component';
 export * from './sample.directive';
 export * from './sample.pipe';
-export * from './d3.service';
+export * from './d3/d3.service';
 
-export * from './bundle-d3';
+export * from './d3/d3types';
 
 @NgModule({
   imports: [
