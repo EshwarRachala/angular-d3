@@ -10,6 +10,8 @@ export * from './sample.directive';
 export * from './sample.pipe';
 export * from './d3.service';
 
+export * from './bundle-d3';
+
 @NgModule({
   imports: [
     CommonModule
@@ -23,7 +25,8 @@ export * from './d3.service';
     SampleComponent,
     SampleDirective,
     SamplePipe
-  ]
+  ],
+  providers: [D3Service]
 })
 export class D3Module {
   static forRoot(): ModuleWithProviders {
