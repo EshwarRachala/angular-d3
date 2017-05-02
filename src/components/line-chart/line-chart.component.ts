@@ -1,5 +1,5 @@
 import { Component, OnInit, OnChanges, ViewChild, ElementRef, Input, ViewEncapsulation } from '@angular/core';
-import { D3Service, D3 } from '../d3/d3.service';
+import { D3Service, D3 } from '../../services/d3.service';
 
 @Component({
     selector: 'line-chart',
