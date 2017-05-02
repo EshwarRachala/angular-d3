@@ -1,5 +1,6 @@
 import { Component, OnInit, OnChanges, ViewChild, ElementRef, Input, ViewEncapsulation } from '@angular/core';
 import { D3Service, D3 } from '../../services/d3.service';
+import { IChart } from '../../models/chart.model';
 
 @Component({
     selector: 'app-bar-chart',
@@ -7,20 +8,20 @@ import { D3Service, D3 } from '../../services/d3.service';
     styleUrls: ['./bar-chart.component.css'],
     encapsulation: ViewEncapsulation.None
 })
-export class BarchartComponent implements OnInit, OnChanges {
+export class BarchartComponent implements IChart, OnInit, OnChanges {
     @ViewChild('chart') private chartContainer: ElementRef;
     @Input() private data: Array<any>;
-    private margin: any = { top: 20, bottom: 60, left: 50, right: 20 };
-    private chart: any;
-    private width: number;
-    private height: number;
-    private xScale: any;
-    private yScale: any;
-    private colors: any;
-    private xAxis: any;
-    private yAxis: any;
-    private d3service: D3Service;
-    private d3: D3;
+    margin: any = { top: 20, bottom: 60, left: 50, right: 20 };
+    chart: any;
+    width: number;
+    height: number;
+    xScale: any;
+    yScale: any;
+    colors: any;
+    xAxis: any;
+    yAxis: any;
+    d3service: D3Service;
+    d3: D3;
 
     constructor(private d3Service: D3Service) {
         this.d3service = d3Service;

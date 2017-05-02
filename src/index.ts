@@ -8,7 +8,7 @@ export * from './services/d3.service';
 export * from './services/d3types';
 export * from './components/bar-chart/bar-chart.component';
 export * from './components/line-chart/line-chart.component';
-export * from './components/grouped/bar-group.component';
+export * from './components/stackedGrouped/s-g-bar.component';
 
 @NgModule({
   imports: [
