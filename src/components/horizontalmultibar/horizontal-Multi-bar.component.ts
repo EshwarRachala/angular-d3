@@ -3,13 +3,13 @@ import { Component, OnInit, OnChanges, ViewChild, ElementRef, Input, ViewEncapsu
 import { D3Service, D3 } from '../../services/d3.service';
 
 @Component({
-    selector: 'h-g-bar',
-    templateUrl: './h-g-bar.component.html',
-    styleUrls: ['./h-g-bar.component.css'],
+    selector: 'hor-multi-bar',
+    templateUrl: './horizontal-Multi-bar.component.html',
+    styleUrls: ['./horizontal-Multi-bar.component.css'],
     encapsulation: ViewEncapsulation.None
 })
 
-export class HGBarComponent implements OnInit, OnChanges {
+export class HMBarComponent implements OnInit, OnChanges {
     value: string;
     @ViewChild('chart') private chartContainer: ElementRef;
     // @Input() private data: Array<any>;
