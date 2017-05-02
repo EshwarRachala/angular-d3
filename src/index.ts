@@ -3,12 +3,12 @@ import { BarchartComponent } from './components/bar-chart/bar-chart.component';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { D3Service } from './services/d3.service';
-// import { LinechartComponent } from './line-chart/line-chart.component';
+import { LinechartComponent } from './components/line-chart/line-chart.component';
 
 export * from './services/d3.service';
 export * from './services/d3types';
 export * from './components/bar-chart/bar-chart.component';
-// export * from './line-chart/line-chart.component';
+export * from './components/line-chart/line-chart.component';
 export * from './components/grouped/bar-group.component';
 
 @NgModule({

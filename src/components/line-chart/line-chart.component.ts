@@ -52,54 +52,54 @@ export class LinechartComponent implements OnInit, OnChanges {
             .attr('class', 'bars')
             .attr('transform', `translate(${this.margin.left}, ${this.margin.top})`);
 
-         // create scales
-        this.xScale = this.d3.scaleLinear()
-            .domain(this.d3.extent(this.data, d => d.x))
-            .range([0, this.width]);
+        //  // create scales
+        // this.xScale = this.d3.scaleLinear()
+        //     .domain(this.d3.extent(this.data, (d: any) => d.a))
+        //     .range([0, this.width]);
 
-        this.yScale = this.d3.scaleLinear()
-            .domain(this.d3.extent(this.data, d => d.y))
-            .range([this.height, 0]);
+        // this.yScale = this.d3.scaleLinear()
+        //     .domain(this.d3.extent(this.data, (d: any) => d.b))
+        //     .range([this.height, 0]);
 
-       this.line = this.d3.line()
-            .x((d: any) => this.xScale(d.x))
-            .y((d: any) => this.yScale(d.y));
+    //    this.line = this.d3.line()
+    //         .x((d: any) => this.xScale(d.a))
+    //         .y((d: any) => this.yScale(d.b));
 
-        this.chart
-            .append('path')
-            .data([this.data])
-            .attr('class', 'line')
-            .attr('d', this.line);
+    //     this.chart
+    //         .append('path')
+    //         .data([this.data])
+    //         .attr('class', 'line')
+    //         .attr('d', this.line);
 
-        // x & y axis
-        this.xAxis = svg.append('g')
-            .attr('class', 'axis axis-x')
-            .attr('transform', `translate(${this.margin.left}, ${this.margin.top + this.height})`)
-            .call(this.d3.axisBottom(this.xScale));
+        // // x & y axis
+        // this.xAxis = svg.append('g')
+        //     .attr('class', 'axis axis-x')
+        //     .attr('transform', `translate(${this.margin.left}, ${this.margin.top + this.height})`)
+        //     .call(this.d3.axisBottom(this.xScale));
 
-        this.yAxis = svg.append('g')
-            .attr('class', 'axis axis-y')
-            .attr('transform', `translate(${this.margin.left}, ${this.margin.top})`)
-            .call(this.d3.axisLeft(this.yScale));
+        // this.yAxis = svg.append('g')
+        //     .attr('class', 'axis axis-y')
+        //     .attr('transform', `translate(${this.margin.left}, ${this.margin.top})`)
+        //     .call(this.d3.axisLeft(this.yScale));
     }
 
     updateChart() {
         // update scales & axis
-        this.xScale.domain(this.d3.extent(this.data, d => d.x));
-        this.yScale.domain(this.d3.extent(this.data, d => d.y));
+        // this.xScale.domain(this.d3.extent(this.data, d => d.x));
+        // this.yScale.domain(this.d3.extent(this.data, d => d.y));
 
-        this.xAxis.transition().call(this.d3.axisBottom(this.xScale));
-        this.yAxis.transition().call(this.d3.axisLeft(this.yScale));
+        // this.xAxis.transition().call(this.d3.axisBottom(this.xScale));
+        // this.yAxis.transition().call(this.d3.axisLeft(this.yScale));
 
-        const update = this.chart.select('.line');
+        // const update = this.chart.select('.line');
 
-        // // remove exiting bars
-        update.exit().remove();
+        // // // remove exiting bars
+        // update.exit().remove();
 
-         this.chart
-            .append('path')
-            .data([this.data])
-            .attr('class', 'line')
-            .attr('d', this.line);
+        //  this.chart
+        //     .append('path')
+        //     .data([this.data])
+        //     .attr('class', 'line')
+        //     .attr('d', this.line);
  }
 }
