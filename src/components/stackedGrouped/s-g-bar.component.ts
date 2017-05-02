@@ -3,13 +3,13 @@ import { Component, OnInit, OnChanges, ViewChild, ElementRef, Input, ViewEncapsu
 import { D3Service, D3 } from '../../services/d3.service';
 
 @Component({
-    selector: 'bar-grouped',
-    templateUrl: './bar-group.component.html',
-    styleUrls: ['./bar-group.component.css'],
+    selector: 's-g-bar',
+    templateUrl: './s-g-bar.component.html',
+    styleUrls: ['./s-g-bar.component.css'],
     encapsulation: ViewEncapsulation.None
 })
 
-export class BarchartGroupedComponent implements OnInit, OnChanges {
+export class SGBarComponent implements OnInit, OnChanges {
     value: string;
     @ViewChild('chart') private chartContainer: ElementRef;
     // @Input() private data: Array<any>;
