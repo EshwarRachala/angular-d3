@@ -19,6 +19,7 @@ export class LinechartComponent implements OnInit, OnChanges {
     private colors: any;
     private xAxis: any;
     private yAxis: any;
+    private line: any;
     private d3service: D3Service;
     private d3: D3;
 
@@ -51,11 +52,7 @@ export class LinechartComponent implements OnInit, OnChanges {
             .attr('class', 'bars')
             .attr('transform', `translate(${this.margin.left}, ${this.margin.top})`);
 
-        // define X & Y domains
-        const xDomain = [0, this.d3.max(this.data, d => d.x)];
-        const yDomain = [0, this.d3.max(this.data, d => d.y)];
-
-        // create scales
+         // create scales
         this.xScale = this.d3.scaleLinear()
             .domain(this.d3.extent(this.data, d => d.x))
             .range([0, this.width]);
@@ -64,7 +61,7 @@ export class LinechartComponent implements OnInit, OnChanges {
             .domain(this.d3.extent(this.data, d => d.y))
             .range([this.height, 0]);
 
-        const line = this.d3.line()
+       this.line = this.d3.line()
             .x((d: any) => this.xScale(d.x))
             .y((d: any) => this.yScale(d.y));
 
@@ -72,7 +69,7 @@ export class LinechartComponent implements OnInit, OnChanges {
             .append('path')
             .data([this.data])
             .attr('class', 'line')
-            .attr('d', line);
+            .attr('d', this.line);
 
         // x & y axis
         this.xAxis = svg.append('g')
@@ -94,36 +91,15 @@ export class LinechartComponent implements OnInit, OnChanges {
         this.xAxis.transition().call(this.d3.axisBottom(this.xScale));
         this.yAxis.transition().call(this.d3.axisLeft(this.yScale));
 
-
-
-
-        const update = this.chart.select('.line')
-            .data(this.data);
+        const update = this.chart.select('.line');
 
         // // remove exiting bars
         update.exit().remove();
 
-        // // update existing bars
-       //  this.chart.selectAll('.line').transition()
-        //     .attr('x', d => this.xScale(d[0]))
-        //     .attr('y', d => this.yScale(d[1]))
-        //     .attr('width', d => this.xScale.bandwidth())
-        //     .attr('height', d => this.height - this.yScale(d[1]))
-        //     .style('fill', (d, i) => this.colors(i));
-
-        // // add new bars
-        // update
-        //     .enter()
-        //     .append('rect')
-        //     .attr('class', 'bar')
-        //     .attr('x', d => this.xScale(d[0]))
-        //     .attr('y', d => this.yScale(0))
-        //     .attr('width', this.xScale.bandwidth())
-        //     .attr('height', 0)
-        //     .style('fill', (d, i) => this.colors(i))
-        //     .transition()
-        //     .delay((d, i) => i * 10)
-        //     .attr('y', d => this.yScale(d[1]))
-        //     .attr('height', d => this.height - this.yScale(d[1]));
-    }
+         this.chart
+            .append('path')
+            .data([this.data])
+            .attr('class', 'line')
+            .attr('d', this.line);
+ }
 }
