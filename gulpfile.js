@@ -46,8 +46,8 @@ gulp.task('inline-resources', function () {
  */
 gulp.task('ngc', function () {
   return ngc({
-    project: `${tmpFolder}/tsconfig.es5.json`
-  })
+      project: `${tmpFolder}/tsconfig.es5.json`
+    })
     .then((exitCode) => {
       if (exitCode === 1) {
         // This error is caught in the 'compile' task by the runSequence method callback
@@ -63,43 +63,15 @@ gulp.task('ngc', function () {
  */
 gulp.task('rollup', function () {
   return gulp.src(`${buildFolder}/**/*.js`)
-  // transform the files here.
+    // transform the files here.
     .pipe(rollup({
       // any option supported by Rollup can be set here.
       entry: `${buildFolder}/index.js`,
       external: [
         '@angular/core',
         '@angular/common',
-        'd3-array',
-        'd3-axis',
-        'd3-brush',
-        'd3-chord',
-        'd3-collection',
-        'd3-color',
-        'd3-dispatch',
-        'd3-drag',
-        'd3-dsv',
-        'd3-ease',
-        'd3-force',
-        'd3-format',
-        'd3-geo',
-        'd3-hierarchy',
-        'd3-interpolate',
-        'd3-path',
-        'd3-polygon',
-        'd3-quadtree',
-        'd3-queue',
-        'd3-random',
-        'd3-scale',
-        'd3-selection',
-        'd3-selection-multi',
-        'd3-shape',
-        'd3-time',
-        'd3-time-format',
-        'd3-timer',
-        'd3-transition',
-        'd3-voronoi',
-        'd3-zoom'
+        'd3',
+        'nvd3'
       ],
       format: 'es'
     }))
