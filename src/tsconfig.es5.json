@@ -21,7 +21,7 @@
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": true,
     "skipTemplateCodegen": true,
-    "flatModuleOutFile": "angular-d3.js",
+    "flatModuleOutFile": "angular-nvd3.js",
     "flatModuleId": "@angular/nvd3"
   },
   "files": [
