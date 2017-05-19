@@ -1,5 +1,5 @@
 {
-  "name": "@angular/nvd3",
+  "name": "ngnvd3",
   "version": "0.1.0",
   "private": false,
   "repository": {
@@ -17,8 +17,8 @@
   "bugs": {
     "url": "https://github.com/EshwarRachala/angular-d3.git/issues"
   },
-  "module": "angular-d3.js",
-  "typings": "angular-d3.d.ts",
+  "module": "ngnvd3.js",
+  "typings": "ngnvd3.d.ts",
   "peerDependencies": {
     "@angular/core": "^4.0.0",
     "rxjs": "^5.1.0",

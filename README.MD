@@ -1,11 +1,11 @@
-# angular-nvd3
+# ngnvd3
 
 ## Installation
 
 To install this library, run:
 
 ```bash
-$ npm install @angular/nvd3 --save
+$ npm install ngnvd3 --save
 ```
 
 ## Consuming your library
@@ -13,7 +13,7 @@ $ npm install @angular/nvd3 --save
 Once you have published your library to npm, you can import your library in any Angular application by running:
 
 ```bash
-$ npm install @angular/nvd3
+$ npm install ngnvd3
 ```
 
 and then from your Angular `AppModule`:
@@ -25,7 +25,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 // Import your library
-import { ChartModule } from '@angular/nvd3';
+import { ChartModule } from 'ngnvd3';
 
 @NgModule({
   declarations: [
