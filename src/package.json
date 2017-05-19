@@ -1,6 +1,6 @@
 {
   "name": "ngnvd3",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "private": false,
   "repository": {
     "type": "git",
@@ -22,6 +22,8 @@
   "peerDependencies": {
     "@angular/core": "^4.0.0",
     "rxjs": "^5.1.0",
-    "zone.js": "^0.8.4"
+    "zone.js": "^0.8.4",
+    "nvd3": "^1.8.5",
+    "d3": "^3.5.17"
   }
 }
