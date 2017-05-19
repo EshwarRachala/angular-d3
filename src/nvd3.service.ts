@@ -4,12 +4,16 @@ import * as d3 from 'd3';
 export type D3 = typeof d3;
 
 @Injectable()
-export class D3Service {
-  private htmlelement: HTMLElement;
-  private nv: any;
+export class ChartService {
   constructor() { }
-  getnv() {
-    this.nv = nv;
+
+  getnvD3() {
+    return nv;
   }
+
+  getD3() {
+    return d3;
+  }
+
 }
 

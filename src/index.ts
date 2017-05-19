@@ -1,6 +1,8 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { D3Service } from './d3.service';
+import { ChartService } from './nvd3.service';
+
+export * from './nvd3.service';
 
 @NgModule({
   imports: [
@@ -10,13 +12,13 @@ import { D3Service } from './d3.service';
   ],
   exports: [
   ],
-  providers: [D3Service]
+  providers: [ChartService]
 })
-export class D3Module {
+export class ChartModule {
   static forRoot(): ModuleWithProviders {
     return {
-      ngModule: D3Module,
-      providers: [D3Service]
+      ngModule: ChartModule,
+      providers: [ChartService]
     };
   }
 }
