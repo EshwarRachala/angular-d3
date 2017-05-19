@@ -1,6 +1,7 @@
 {
   "name": "binvd3",
   "version": "0.1.0",
+  "private": false,
   "scripts": {
     "clean": "gulp clean",
     "build": "gulp clean && gulp build",

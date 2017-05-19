@@ -1,11 +1,11 @@
-# angular-d3
+# angular-nvd3
 
 ## Installation
 
 To install this library, run:
 
 ```bash
-$ npm install @angular/d3 --save
+$ npm install @angular/nvd3 --save
 ```
 
 ## Consuming your library
@@ -13,7 +13,7 @@ $ npm install @angular/d3 --save
 Once you have published your library to npm, you can import your library in any Angular application by running:
 
 ```bash
-$ npm install @angular/d3
+$ npm install @angular/nvd3
 ```
 
 and then from your Angular `AppModule`:
@@ -25,7 +25,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 // Import your library
-import { D3Module } from '@angular/d3';
+import { ChartModule } from '@angular/nvd3';
 
 @NgModule({
   declarations: [
@@ -34,23 +34,13 @@ import { D3Module } from '@angular/d3';
   imports: [
     BrowserModule,
     // Specify your library as an import
-    D3Module
+    ChartModule
   ],
-  providers: [],
+  providers: [ChartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-```
 
-Once your library is imported, you can use its components, directives and pipes in your Angular application:
-
-```xml
-<!-- You can now use your library component in app.component.html -->
-<h1>
-  {{title}}
-</h1>
-<sampleComponent></sampleComponent>
-```
 
 ## Development
 
