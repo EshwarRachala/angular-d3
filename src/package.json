@@ -1,5 +1,5 @@
 {
-  "name": "@angular/d3",
+  "name": "@angular/nvd3",
   "version": "0.1.0",
   "repository": {
     "type": "git",
