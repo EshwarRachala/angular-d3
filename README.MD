@@ -10,7 +10,9 @@ $ npm install ngnvd3 --save
 
 ## nvd3 examples 
 http://ngnvd3.surge.sh/
-Reference https://github.com/EshwarRachala/angular-d3-demo for examples.
+
+## Examples Repo
+Reference `https://github.com/EshwarRachala/angular-d3-demo` for examples.
 
 ## Consuming your library
 
