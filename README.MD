@@ -8,6 +8,9 @@ To install this library, run:
 $ npm install ngnvd3 --save
 ```
 
+## nvd3 examples 
+`http://ngnvd3.surge.sh/`
+
 ## Consuming your library
 
 Once you have published your library to npm, you can import your library in any Angular application by running:
