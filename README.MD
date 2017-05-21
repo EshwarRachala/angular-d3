@@ -14,9 +14,9 @@ http://ngnvd3.surge.sh/
 ## Examples Repo
 Reference `https://github.com/EshwarRachala/angular-d3-demo` for examples.
 
-## Consuming your library
+## Consuming the library
 
-Once you have published your library to npm, you can import your library in any Angular application by running:
+Import the library in any Angular application by running:
 
 ```bash
 $ npm install ngnvd3
