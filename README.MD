@@ -9,7 +9,7 @@ $ npm install ngnvd3 --save
 ```
 
 ## nvd3 examples 
-`http://ngnvd3.surge.sh/`
+(`http://ngnvd3.surge.sh/`)
 
 ## Consuming your library
 
