@@ -62,6 +62,9 @@ To lint all `*.ts` files:
 $ npm run lint
 ```
 
+## Further help
+http://nvd3.org/index.html
+
 ## License
 
 MIT © [eshwar rachala](mailto:eshwar.appdev@gmail.com)
