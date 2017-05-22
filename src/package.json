@@ -11,7 +11,16 @@
     "email": "eshwar.appdev@gmail.com"
   },
   "keywords": [
-    "angular"
+    "angular",
+    "angular2",
+    "angular4",
+    "nvd3",
+    "ng",
+    "charts",
+    "d3",
+    "webpack",
+    "angular-cli",
+    "angular-service"
   ],
   "license": "MIT",
   "bugs": {
