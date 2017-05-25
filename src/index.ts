@@ -1,8 +1,8 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ChartService } from './services/nv-d3.service';
 
-export * from './services/nv-d3.service';
+import { ChartService } from './nv-d3.service';
+export * from './nv-d3.service';
 
 @NgModule({
   imports: [
