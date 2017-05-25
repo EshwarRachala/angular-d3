@@ -4,6 +4,7 @@ import * as d3 from 'd3';
 
 @Injectable()
 export class ChartService {
+
   constructor() { }
 
   getnvD3() {

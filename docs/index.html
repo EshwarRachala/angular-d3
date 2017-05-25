@@ -63,36 +63,11 @@
                                 id="xs-modules-links"
                             >
                                 <li class="link">
-                                    <a href="./modules/D3Module.html" >D3Module</a>
+                                    <a href="./modules/ChartModule.html" >ChartModule</a>
                                 </li>
                         </ul>
                     </li>
             
-                    <li class="chapter">
-                        <div class="simple">
-                            <span class="fa fa-cogs"></span>
-                            <span>Components</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-components-links"
-                                ></span>
-                        </div>
-                        <ul class="links collapse in"
-                                id="xs-components-links"
-                            >
-                                <li class="link">
-                                    <a href="./components/BarchartComponent.html" >BarchartComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="./components/HMBarComponent.html" >HMBarComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="./components/LinechartComponent.html" >LinechartComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="./components/SGBarComponent.html" >SGBarComponent</a>
-                                </li>
-                        </ul>
-                    </li>
             
             
             
@@ -108,27 +83,11 @@
                                 id="xs-injectables-links"
                             >
                                 <li class="link">
-                                    <a href="./injectables/D3Service.html" >D3Service</a>
+                                    <a href="./injectables/ChartService.html" >ChartService</a>
                                 </li>
                         </ul>
                     </li>
             
-                    <li class="chapter">
-                        <div class="simple">
-                            <span class="fa fa-info"></span>
-                            <span>Interfaces</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-interfaces-links"
-                                ></span>
-                        </div>
-                        <ul class="links collapse in"
-                                id="xs-interfaces-links"
-                            >
-                                <li class="link">
-                                    <a href="./interfaces/IChart.html" >IChart</a>
-                                </li>
-                        </ul>
-                    </li>
             
             
             
@@ -191,36 +150,11 @@
                                        id="modules-links"
                    >
                                        <li class="link">
-                                           <a href="./modules/D3Module.html" >D3Module</a>
+                                           <a href="./modules/ChartModule.html" >ChartModule</a>
                                        </li>
                                </ul>
                            </li>
                    
-                           <li class="chapter">
-                               <div class="simple">
-                                   <span class="fa fa-cogs"></span>
-                                   <span>Components</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#components-links"
-                   ></span>
-                               </div>
-                               <ul class="links collapse in"
-                                       id="components-links"
-                   >
-                                       <li class="link">
-                                           <a href="./components/BarchartComponent.html" >BarchartComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="./components/HMBarComponent.html" >HMBarComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="./components/LinechartComponent.html" >LinechartComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="./components/SGBarComponent.html" >SGBarComponent</a>
-                                       </li>
-                               </ul>
-                           </li>
                    
                    
                    
@@ -236,27 +170,11 @@
                                        id="injectables-links"
                    >
                                        <li class="link">
-                                           <a href="./injectables/D3Service.html" >D3Service</a>
+                                           <a href="./injectables/ChartService.html" >ChartService</a>
                                        </li>
                                </ul>
                            </li>
                    
-                           <li class="chapter">
-                               <div class="simple">
-                                   <span class="fa fa-info"></span>
-                                   <span>Interfaces</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#interfaces-links"
-                   ></span>
-                               </div>
-                               <ul class="links collapse in"
-                                       id="interfaces-links"
-                   >
-                                       <li class="link">
-                                           <a href="./interfaces/IChart.html" >IChart</a>
-                                       </li>
-                               </ul>
-                           </li>
                    
                    
                    
@@ -272,41 +190,48 @@
                </div>
                <div class="content readme">
                    <div class="content-data">
-<h1 id="angular-d3">angular-d3</h1>
+<h1 id="ngnvd3">ngnvd3</h1>
 <h2 id="installation">Installation</h2>
 <p>To install this library, run:</p>
-<pre class="line-numbers"><code class="language-bash">$ npm install @angular/d3 --save</code></pre><h2 id="consuming-your-library">Consuming your library</h2>
-<p>Once you have published your library to npm, you can import your library in any Angular application by running:</p>
-<pre class="line-numbers"><code class="language-bash">$ npm install @angular/d3</code></pre><p>and then from your Angular <code>AppModule</code>:</p>
-<pre class="line-numbers"><code class="language-typescript">import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+<pre class="line-numbers"><code class="language-bash">$ npm install ngnvd3 --save</code></pre><h2 id="nvd3-examples">nvd3 examples</h2>
+<p><a href="http://ngnvd3.surge.sh/">http://ngnvd3.surge.sh/</a></p>
+<h2 id="examples-repo">Examples Repo</h2>
+<p>Reference <code>https://github.com/EshwarRachala/angular-d3-demo</code> for examples.</p>
+<h2 id="consuming-the-library">Consuming the library</h2>
+<p>Import the library in any Angular application by running:</p>
+<pre class="line-numbers"><code class="language-bash">$ npm install ngnvd3</code></pre><p>and then from your Angular <code>AppModule</code>:</p>
+<pre class="line-numbers"><code class="language-typescript">import { BrowserModule } from &#39;&#40;angular/platform-browser&#39;;
+import { NgModule } from &#39;&#40;angular/core&#39;;
 
-import { AppComponent } from './app.component';
+import { AppComponent } from &#39;./app.component&#39;;
 
 // Import your library
-import { D3Module } from '@angular/d3';
+import { ChartModule } from &#39;ngnvd3&#39;;
 
-@NgModule({
+&#40;NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
     BrowserModule,
     // Specify your library as an import
-    D3Module
+    ChartModule
   ],
-  providers: [],
+  providers: [ChartService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }</code></pre><p>Once your library is imported, you can use its components, directives and pipes in your Angular application:</p>
-<pre class="line-numbers"><code class="language-xml"><!-- You can now use your library component in app.component.html -->
-<h1>
-  {{title}}
-</h1>
-<sampleComponent></sampleComponent></code></pre><h2 id="development">Development</h2>
-<p>To generate all <code>*.js</code>, <code>*.d.ts</code> and <code>*.metadata.json</code> files:</p>
-<pre class="line-numbers"><code class="language-bash">$ npm run build</code></pre><p>To lint all <code>*.ts</code> files:</p>
-<pre class="line-numbers"><code class="language-bash">$ npm run lint</code></pre><h2 id="license">License</h2>
+export class AppModule { }
+
+
+## Development
+
+To generate all `*.js`, `*.d.ts` and `*.metadata.json` files:
+
+```bash
+$ npm run build</code></pre><p>To lint all <code>*.ts</code> files:</p>
+<pre class="line-numbers"><code class="language-bash">$ npm run lint</code></pre><h2 id="further-help">Further help</h2>
+<p><a href="http://nvd3.org/index.html">http://nvd3.org/index.html</a></p>
+<h2 id="license">License</h2>
 <p>MIT © <a href="mailto:eshwar.appdev@gmail.com">eshwar rachala</a></p>
 
 

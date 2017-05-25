@@ -22,29 +22,45 @@
 <text text-anchor="start" x="429.7258" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Exports</text>
 <g id="clust1" class="cluster">
 <title>cluster_ChartModule</title>
-<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="176,-70 176,-195 320,-195 320,-70 176,-70"/>
+<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="103,-70 103,-195 393,-195 393,-70 103,-70"/>
 </g>
 <g id="clust3" class="cluster">
 <title>cluster_ChartModule_imports</title>
-<polygon fill="none" stroke="#000000" points="184,-78 184,-130 312,-130 312,-78 184,-78"/>
+<polygon fill="none" stroke="#000000" points="257,-78 257,-130 385,-130 385,-78 257,-78"/>
+</g>
+<g id="clust6" class="cluster">
+<title>cluster_ChartModule_providers</title>
+<polygon fill="none" stroke="#000000" points="111,-78 111,-130 249,-130 249,-78 111,-78"/>
 </g>
 <!-- CommonModule -->
 <g id="node1" class="node">
 <title>CommonModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="303.6681,-122 300.6681,-126 279.6681,-126 276.6681,-122 192.3319,-122 192.3319,-86 303.6681,-86 303.6681,-122"/>
-<text text-anchor="middle" x="248" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">CommonModule</text>
+<polygon fill="#8dd3c7" stroke="#000000" points="376.6681,-122 373.6681,-126 352.6681,-126 349.6681,-122 265.3319,-122 265.3319,-86 376.6681,-86 376.6681,-122"/>
+<text text-anchor="middle" x="321" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">CommonModule</text>
 </g>
 <!-- ChartModule -->
 <g id="node2" class="node">
 <title>ChartModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="293.1529,-187 290.1529,-191 269.1529,-191 266.1529,-187 202.8471,-187 202.8471,-151 293.1529,-151 293.1529,-187"/>
-<text text-anchor="middle" x="248" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">ChartModule</text>
+<polygon fill="#8dd3c7" stroke="#000000" points="295.1529,-187 292.1529,-191 271.1529,-191 268.1529,-187 204.8471,-187 204.8471,-151 295.1529,-151 295.1529,-187"/>
+<text text-anchor="middle" x="250" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">ChartModule</text>
 </g>
 <!-- CommonModule&#45;&gt;ChartModule -->
 <g id="edge1" class="edge">
 <title>CommonModule&#45;&gt;ChartModule</title>
-<path fill="none" stroke="#000000" d="M248,-122.1061C248,-122.1061 248,-140.991 248,-140.991"/>
-<polygon fill="#000000" stroke="#000000" points="244.5001,-140.9909 248,-150.991 251.5001,-140.991 244.5001,-140.9909"/>
+<path fill="none" stroke="#000000" d="M280.2462,-122.1061C280.2462,-122.1061 280.2462,-140.991 280.2462,-140.991"/>
+<polygon fill="#000000" stroke="#000000" points="276.7462,-140.9909 280.2462,-150.991 283.7462,-140.991 276.7462,-140.9909"/>
+</g>
+<!-- ChartService -->
+<g id="node3" class="node">
+<title>ChartService</title>
+<ellipse fill="#fdb462" stroke="#000000" cx="180" cy="-104" rx="61.3916" ry="18"/>
+<text text-anchor="middle" x="180" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">ChartService</text>
+</g>
+<!-- ChartService&#45;&gt;ChartModule -->
+<g id="edge2" class="edge">
+<title>ChartService&#45;&gt;ChartModule</title>
+<path fill="none" stroke="#000000" d="M223.0598,-116.8419C223.0598,-116.8419 223.0598,-140.5231 223.0598,-140.5231"/>
+<polygon fill="#000000" stroke="#000000" points="219.5599,-140.523 223.0598,-150.5231 226.5599,-140.5231 219.5599,-140.523"/>
 </g>
 </g>
 </svg>
