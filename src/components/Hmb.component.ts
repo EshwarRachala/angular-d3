@@ -34,7 +34,7 @@ export class HMBChartComponent implements OnInit, OnChanges {
             .y(function (d) { return d.value })
             .showValues(true)
             .barColor(d3.scale.category20().range())
-            .margin({ top: 30, right: 20, bottom: 50, left: 100 })
+            .margin({ top: 30, right: 20, bottom: 50, left: 130 })
             .duration(250)
             .showControls(true)
             .showLegend(true);
