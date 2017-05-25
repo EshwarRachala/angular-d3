@@ -3,8 +3,11 @@ import { CommonModule } from '@angular/common';
 
 import { ChartService } from './nv-d3.service';
 import { PieChartComponent } from './components/pie-chart.component';
+import { DoughnutChartComponent } from './components/doughnut-chart.component';
+
 export * from './nv-d3.service';
 export * from './components/pie-chart.component';
+export * from './components/doughnut-chart.component';
 
 
 @NgModule({
@@ -12,10 +15,12 @@ export * from './components/pie-chart.component';
     CommonModule
   ],
   declarations: [
-    PieChartComponent
+    PieChartComponent,
+    DoughnutChartComponent
   ],
   exports: [
-    PieChartComponent
+    PieChartComponent,
+    DoughnutChartComponent
   ],
   providers: [ChartService]
 })
