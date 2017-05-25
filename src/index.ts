@@ -5,11 +5,13 @@ import { ChartService } from './nv-d3.service';
 import { PieChartComponent } from './components/pie-chart.component';
 import { DoughnutChartComponent } from './components/doughnut-chart.component';
 import { HMBChartComponent } from './components/Hmb.component';
+import { VMBChartComponent } from './components/Vmb.component';
 
 export * from './nv-d3.service';
 export * from './components/pie-chart.component';
 export * from './components/doughnut-chart.component';
 export * from './components/Hmb.component';
+export * from './components/Vmb.component';
 
 
 @NgModule({
@@ -19,12 +21,14 @@ export * from './components/Hmb.component';
   declarations: [
     PieChartComponent,
     DoughnutChartComponent,
-    HMBChartComponent
+    HMBChartComponent,
+    VMBChartComponent
   ],
   exports: [
     PieChartComponent,
     DoughnutChartComponent,
-    HMBChartComponent
+    HMBChartComponent,
+    VMBChartComponent
   ],
   providers: [ChartService]
 })
