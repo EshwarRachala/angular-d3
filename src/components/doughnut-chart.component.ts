@@ -1,22 +1,22 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild, ElementRef, OnChanges, Input } from '@angular/core';
 import nv from 'nvd3';
 import * as d3 from 'd3';
+import { IchartConfig } from 'components/chart-config.component';
 
 @Component({
     selector: 'doughnut-chart',
-    template: '<svg id="chart"></svg>',
+    template: '<div id="doughnutchart"><svg></svg></div>',
     encapsulation: ViewEncapsulation.None
 })
 export class DoughnutChartComponent implements OnInit, OnChanges {
+    @Input() config: IchartConfig;
     chart: any;
-    @Input() data: any;
-    @Input() height: number;
 
     constructor() { }
 
     ngOnInit() {
         this.createChart();
-        if (this.data) {
+        if (this.config.data) {
             this.updateChart();
         }
     }
@@ -40,9 +40,9 @@ export class DoughnutChartComponent implements OnInit, OnChanges {
     }
 
     updateChart() {
-        d3.select('#chart')
-            .attr('height', this.height)
-            .datum(this.data)
+        d3.select('#doughnutchart svg')
+            .attr('height', this.config.height)
+            .datum(this.config.data)
             .transition()
             .duration(350)
             .call(this.chart);

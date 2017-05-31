@@ -47,6 +47,10 @@ import { ChartModule } from 'ngnvd3';
 })
 export class AppModule { }
 
+## Charts
+
+### Do
+
 
 ## Development
 
