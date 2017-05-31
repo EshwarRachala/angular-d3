@@ -1,4 +1,5 @@
 export interface IchartConfig {
     data: any;
-    height: number;
+    height?: number;
+    width?: number;
 }
