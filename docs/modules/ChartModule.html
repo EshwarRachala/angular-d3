@@ -928,16 +928,17 @@
         </div>
     </div>
     <div class="tab-pane fade tab-source-code" id="source">
-        <pre class="line-numbers"><code class="language-typescript">import { CandlestickChartComponent } from &#x27;./components/candle-stick.component&#x27;;
+        <pre class="line-numbers"><code class="language-typescript">import { NgModule, ModuleWithProviders } from &#x27;@angular/core&#x27;;
+import { CommonModule } from &#x27;@angular/common&#x27;;
+
+import { ChartService } from &#x27;./nv-d3.service&#x27;;
+
+import { CandlestickChartComponent } from &#x27;./components/candle-stick.component&#x27;;
 import { BulletChartComponent } from &#x27;./components/bullet-chart.component&#x27;;
 import { SunburstChartComponent } from &#x27;./components/sunburst.componet&#x27;;
 import { OhlcChartComponent } from &#x27;./components/ohlc.component&#x27;;
 import { LineBarChartComponent } from &#x27;./components/linebar-chart.component&#x27;;
 import { LineViewChartComponent } from &#x27;./components/lineview-chart.component&#x27;;
-import { NgModule, ModuleWithProviders } from &#x27;@angular/core&#x27;;
-import { CommonModule } from &#x27;@angular/common&#x27;;
-
-import { ChartService } from &#x27;./nv-d3.service&#x27;;
 import { PieChartComponent } from &#x27;./components/pie-chart.component&#x27;;
 import { DoughnutChartComponent } from &#x27;./components/doughnut-chart.component&#x27;;
 import { HMBChartComponent } from &#x27;./components/Hmb.component&#x27;;

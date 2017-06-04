@@ -396,31 +396,11 @@
                 <tbody>
                     <tr>
                         <td class="col-md-2">
-                            <code>data</code>
+                            <code>config</code>
                         </td>
                         <td class="col-md-10">
                               <p>
-                                <em>Type:</em>    <code>any</code>
-
-                              </p>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-2" colspan="2">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/components/ohlc.component.ts:12</a></div>
-                            </td>
-                        </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-2">
-                            <code>height</code>
-                        </td>
-                        <td class="col-md-10">
-                              <p>
-                                <em>Type:</em>    <code>number</code>
+                                <em>Type:</em>    <code>ChartConfig</code>
 
                               </p>
                         </td>
@@ -428,46 +408,6 @@
                         <tr>
                             <td class="col-md-2" colspan="2">
                                 <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/components/ohlc.component.ts:13</a></div>
-                            </td>
-                        </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-2">
-                            <code>xlabel</code>
-                        </td>
-                        <td class="col-md-10">
-                              <p>
-                                <em>Type:</em>    <code>string</code>
-
-                              </p>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-2" colspan="2">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/components/ohlc.component.ts:14</a></div>
-                            </td>
-                        </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-2">
-                            <code>ylabel</code>
-                        </td>
-                        <td class="col-md-10">
-                              <p>
-                                <em>Type:</em>    <code>string</code>
-
-                              </p>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-2" colspan="2">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/components/ohlc.component.ts:15</a></div>
                             </td>
                         </tr>
                 </tbody>
@@ -486,7 +426,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/components/ohlc.component.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/components/ohlc.component.ts:13</a></div>
                             </td>
                         </tr>
     
@@ -515,7 +455,7 @@
     
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/components/ohlc.component.ts:20</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/components/ohlc.component.ts:18</a></div>
                             </td>
                         </tr>
     
@@ -546,7 +486,7 @@
     
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/components/ohlc.component.ts:27</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/components/ohlc.component.ts:25</a></div>
                             </td>
                         </tr>
     
@@ -577,7 +517,7 @@
     
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/components/ohlc.component.ts:33</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/components/ohlc.component.ts:31</a></div>
                             </td>
                         </tr>
     
@@ -608,7 +548,7 @@
     
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/components/ohlc.component.ts:55</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/components/ohlc.component.ts:53</a></div>
                             </td>
                         </tr>
     
@@ -645,7 +585,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/components/ohlc.component.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/components/ohlc.component.ts:12</a></div>
                             </td>
                         </tr>
                 </tbody>
@@ -655,7 +595,8 @@
 
 
     <div class="tab-pane fade tab-source-code" id="source">
-        <pre class="line-numbers"><code class="language-typescript">import { Component, OnInit, ViewEncapsulation, OnChanges, Input } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers"><code class="language-typescript">import { ChartConfig } from &#x27;../chart-config&#x27;;
+import { Component, OnInit, ViewEncapsulation, OnChanges, Input } from &#x27;@angular/core&#x27;;
 import * as nv from &#x27;nvd3&#x27;;
 import * as d3 from &#x27;d3&#x27;;
 
@@ -666,17 +607,14 @@ import * as d3 from &#x27;d3&#x27;;
 })
 export class OhlcChartComponent implements OnInit, OnChanges {
     chart: nv.OhlcBarChart;
-    @Input() data: any;
-    @Input() height: number;
-    @Input() xlabel: string;
-    @Input() ylabel: string;
+    @Input() config: ChartConfig;
 
 
     constructor() { }
 
     ngOnInit() {
         this.createChart();
-        if (this.data) {
+        if (this.config.data) {
             this.updateChart();
         }
     }
@@ -712,8 +650,8 @@ export class OhlcChartComponent implements OnInit, OnChanges {
     updateChart() {
 
         d3.select(&#x27;#ohlc svg&#x27;)
-            .attr(&#x27;height&#x27;, this.height)
-            .datum(this.data)
+            .attr(&#x27;height&#x27;, this.config.height)
+            .datum(this.config.data)
             .transition()
             .duration(350)
             .call(this.chart);
@@ -751,7 +689,7 @@ export class OhlcChartComponent implements OnInit, OnChanges {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><div id="ohlc"><svg></svg></div></div>'
-    var COMPONENTS = [{'name': 'BoxplotChartComponent', 'selector': 'boxplot-chart'},{'name': 'BulletChartComponent', 'selector': 'bullet-chart'},{'name': 'CandlestickChartComponent', 'selector': 'candlestick-chart'},{'name': 'CumulativelineChartComponent', 'selector': 'cumulativeline-chart'},{'name': 'DoughnutChartComponent', 'selector': 'doughnut-chart'},{'name': 'HMBChartComponent', 'selector': 'hmb-chart'},{'name': 'LineBarChartComponent', 'selector': 'line-bar-chart'},{'name': 'LineViewChartComponent', 'selector': 'line-view-chart'},{'name': 'OhlcChartComponent', 'selector': 'ohlc-chart'},{'name': 'PieChartComponent', 'selector': 'pie-chart'},{'name': 'ScatteredBubbleChartComponent', 'selector': 'scatteredbubble-chart'},{'name': 'SimpleLineChartComponent', 'selector': 'line-chart'},{'name': 'StackedAreaChartComponent', 'selector': 'stackedarea-chart'},{'name': 'SunburstChartComponent', 'selector': 'sunburst-chart'},{'name': 'VBarComponent', 'selector': 'vbar-chart'},{'name': 'VMBChartComponent', 'selector': 'vmb-chart'}];
+    var COMPONENTS = [{'name': 'BoxplotChartComponent', 'selector': 'boxplot-chart'},{'name': 'BulletChartComponent', 'selector': 'bullet-chart'},{'name': 'CandlestickChartComponent', 'selector': 'candlestick-chart'},{'name': 'CumulativelineChartComponent', 'selector': 'cumulativeline-chart'},{'name': 'DoughnutChartComponent', 'selector': 'doughnut-chart'},{'name': 'HMBChartComponent', 'selector': 'hmb-chart'},{'name': 'LineBarChartComponent', 'selector': 'line-bar-chart'},{'name': 'LineViewChartComponent', 'selector': 'line-view-chart'},{'name': 'OhlcChartComponent', 'selector': 'ohlc-chart'},{'name': 'PieChartComponent', 'selector': 'pie-chart'},{'name': 'ScatteredBubbleChartComponent', 'selector': 'scatteredbubble-chart'},{'name': 'SimpleLineChartComponent', 'selector': 'line-chart'},{'name': 'StackedAreaChartComponent', 'selector': 'stackedarea-chart'},{'name': 'SunburstChartComponent', 'selector': 'sunburst-chart'},{'name': 'VBarComponent', 'selector': 'discrete-bar-chart'},{'name': 'VMBChartComponent', 'selector': 'vmb-chart'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'OhlcChartComponent'};
 </script>

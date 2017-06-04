@@ -374,7 +374,7 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>vbar-chart</code></td>
+                <td class="col-md-9"><code>discrete-bar-chart</code></td>
             </tr>
 
 
@@ -396,31 +396,11 @@
                 <tbody>
                     <tr>
                         <td class="col-md-2">
-                            <code>data</code>
+                            <code>config</code>
                         </td>
                         <td class="col-md-10">
                               <p>
-                                <em>Type:</em>    <code>any</code>
-
-                              </p>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-2" colspan="2">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/components/VerticalBar.component.ts:12</a></div>
-                            </td>
-                        </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-2">
-                            <code>height</code>
-                        </td>
-                        <td class="col-md-10">
-                              <p>
-                                <em>Type:</em>    <code>number</code>
+                                <em>Type:</em>    <code>ChartConfig</code>
 
                               </p>
                         </td>
@@ -568,7 +548,7 @@
     
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/components/VerticalBar.component.ts:43</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/components/VerticalBar.component.ts:44</a></div>
                             </td>
                         </tr>
     
@@ -605,7 +585,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/components/VerticalBar.component.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/components/VerticalBar.component.ts:12</a></div>
                             </td>
                         </tr>
                 </tbody>
@@ -615,25 +595,25 @@
 
 
     <div class="tab-pane fade tab-source-code" id="source">
-        <pre class="line-numbers"><code class="language-typescript">import { Component, OnInit, ViewEncapsulation, OnChanges, Input } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers"><code class="language-typescript">import { ChartConfig } from &#x27;../chart-config&#x27;;
+import { Component, OnInit, ViewEncapsulation, OnChanges, Input } from &#x27;@angular/core&#x27;;
 import * as nv from &#x27;nvd3&#x27;;
 import * as d3 from &#x27;d3&#x27;;
 
 @Component({
-    selector: &#x27;vbar-chart&#x27;,
+    selector: &#x27;discrete-bar-chart&#x27;,
     template: &#x27;&lt;div id&#x3D;&quot;vbar&quot;&gt;&lt;svg&gt;&lt;/svg&gt;&lt;/div&gt;&#x27;,
     encapsulation: ViewEncapsulation.None
 })
 export class VBarComponent implements OnInit, OnChanges {
     chart: nv.DiscreteBarChart;
-    @Input() data: any;
-    @Input() height: number;
+    @Input() config: ChartConfig;
 
     constructor() { }
 
     ngOnInit() {
         this.createChart();
-        if (this.data) {
+        if (this.config.data) {
             this.updateChart();
         }
     }
@@ -654,14 +634,15 @@ export class VBarComponent implements OnInit, OnChanges {
                 .showValues(true)
                 .showXAxis(true)
                 .showYAxis(true)
-                .duration(250);
+                .duration(250)
+                .tooltips(true);
     }
 
     updateChart() {
 
         d3.select(&#x27;#vbar svg&#x27;)
-            .attr(&#x27;height&#x27;, this.height)
-            .datum(this.data)
+            .attr(&#x27;height&#x27;, this.config.height)
+            .datum(this.config.data)
             .transition()
             .duration(350)
             .call(this.chart);
@@ -699,7 +680,7 @@ export class VBarComponent implements OnInit, OnChanges {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><div id="vbar"><svg></svg></div></div>'
-    var COMPONENTS = [{'name': 'BoxplotChartComponent', 'selector': 'boxplot-chart'},{'name': 'BulletChartComponent', 'selector': 'bullet-chart'},{'name': 'CandlestickChartComponent', 'selector': 'candlestick-chart'},{'name': 'CumulativelineChartComponent', 'selector': 'cumulativeline-chart'},{'name': 'DoughnutChartComponent', 'selector': 'doughnut-chart'},{'name': 'HMBChartComponent', 'selector': 'hmb-chart'},{'name': 'LineBarChartComponent', 'selector': 'line-bar-chart'},{'name': 'LineViewChartComponent', 'selector': 'line-view-chart'},{'name': 'OhlcChartComponent', 'selector': 'ohlc-chart'},{'name': 'PieChartComponent', 'selector': 'pie-chart'},{'name': 'ScatteredBubbleChartComponent', 'selector': 'scatteredbubble-chart'},{'name': 'SimpleLineChartComponent', 'selector': 'line-chart'},{'name': 'StackedAreaChartComponent', 'selector': 'stackedarea-chart'},{'name': 'SunburstChartComponent', 'selector': 'sunburst-chart'},{'name': 'VBarComponent', 'selector': 'vbar-chart'},{'name': 'VMBChartComponent', 'selector': 'vmb-chart'}];
+    var COMPONENTS = [{'name': 'BoxplotChartComponent', 'selector': 'boxplot-chart'},{'name': 'BulletChartComponent', 'selector': 'bullet-chart'},{'name': 'CandlestickChartComponent', 'selector': 'candlestick-chart'},{'name': 'CumulativelineChartComponent', 'selector': 'cumulativeline-chart'},{'name': 'DoughnutChartComponent', 'selector': 'doughnut-chart'},{'name': 'HMBChartComponent', 'selector': 'hmb-chart'},{'name': 'LineBarChartComponent', 'selector': 'line-bar-chart'},{'name': 'LineViewChartComponent', 'selector': 'line-view-chart'},{'name': 'OhlcChartComponent', 'selector': 'ohlc-chart'},{'name': 'PieChartComponent', 'selector': 'pie-chart'},{'name': 'ScatteredBubbleChartComponent', 'selector': 'scatteredbubble-chart'},{'name': 'SimpleLineChartComponent', 'selector': 'line-chart'},{'name': 'StackedAreaChartComponent', 'selector': 'stackedarea-chart'},{'name': 'SunburstChartComponent', 'selector': 'sunburst-chart'},{'name': 'VBarComponent', 'selector': 'discrete-bar-chart'},{'name': 'VMBChartComponent', 'selector': 'vmb-chart'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'VBarComponent'};
 </script>

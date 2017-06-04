@@ -396,31 +396,11 @@
                 <tbody>
                     <tr>
                         <td class="col-md-2">
-                            <code>data</code>
+                            <code>config</code>
                         </td>
                         <td class="col-md-10">
                               <p>
-                                <em>Type:</em>    <code>any</code>
-
-                              </p>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-2" colspan="2">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/components/Hmb.component.ts:12</a></div>
-                            </td>
-                        </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-2">
-                            <code>height</code>
-                        </td>
-                        <td class="col-md-10">
-                              <p>
-                                <em>Type:</em>    <code>number</code>
+                                <em>Type:</em>    <code>ChartConfig</code>
 
                               </p>
                         </td>
@@ -428,26 +408,6 @@
                         <tr>
                             <td class="col-md-2" colspan="2">
                                 <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/components/Hmb.component.ts:13</a></div>
-                            </td>
-                        </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-2">
-                            <code>margin</code>
-                        </td>
-                        <td class="col-md-10">
-                              <p>
-                                <em>Type:</em>    <code>any</code>
-
-                              </p>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-2" colspan="2">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/components/Hmb.component.ts:14</a></div>
                             </td>
                         </tr>
                 </tbody>
@@ -466,7 +426,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/components/Hmb.component.ts:14</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/components/Hmb.component.ts:13</a></div>
                             </td>
                         </tr>
     
@@ -495,7 +455,7 @@
     
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/components/Hmb.component.ts:20</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/components/Hmb.component.ts:17</a></div>
                             </td>
                         </tr>
     
@@ -526,7 +486,7 @@
     
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/components/Hmb.component.ts:27</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/components/Hmb.component.ts:24</a></div>
                             </td>
                         </tr>
     
@@ -557,7 +517,7 @@
     
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/components/Hmb.component.ts:33</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/components/Hmb.component.ts:30</a></div>
                             </td>
                         </tr>
     
@@ -588,7 +548,7 @@
     
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/components/Hmb.component.ts:52</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/components/Hmb.component.ts:49</a></div>
                             </td>
                         </tr>
     
@@ -625,7 +585,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/components/Hmb.component.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/components/Hmb.component.ts:12</a></div>
                             </td>
                         </tr>
                 </tbody>
@@ -635,7 +595,8 @@
 
 
     <div class="tab-pane fade tab-source-code" id="source">
-        <pre class="line-numbers"><code class="language-typescript">import { Component, OnInit, ViewEncapsulation, OnChanges, Input } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers"><code class="language-typescript">import { ChartConfig } from &#x27;../chart-config&#x27;;
+import { Component, OnInit, ViewEncapsulation, OnChanges, Input } from &#x27;@angular/core&#x27;;
 import * as nv from &#x27;nvd3&#x27;;
 import * as d3 from &#x27;d3&#x27;;
 
@@ -646,17 +607,13 @@ import * as d3 from &#x27;d3&#x27;;
 })
 export class HMBChartComponent implements OnInit, OnChanges {
     chart: nv.MultiBarHorizontalChart;
-    @Input() data: any;
-    @Input() height: number;
-    @Input() margin: any;
+    @Input() config: ChartConfig
 
-    constructor() {
-        this.margin &#x3D; { top: 30, right: 20, bottom: 50, left: 130 };
-    }
+    constructor() { }
 
     ngOnInit() {
         this.createChart();
-        if (this.data) {
+        if (this.config.data) {
             this.updateChart();
         }
     }
@@ -673,7 +630,7 @@ export class HMBChartComponent implements OnInit, OnChanges {
             .y(d &#x3D;&gt; d.value)
             .showValues(true)
             .barColor(d3.scale.category20().range())
-            .margin(this.margin)
+            .margin(this.config.margin)
             .duration(250)
             .showControls(true)
             .showLegend(true);
@@ -689,8 +646,8 @@ export class HMBChartComponent implements OnInit, OnChanges {
     updateChart() {
 
         d3.select(&#x27;#hmb svg&#x27;)
-            .attr(&#x27;height&#x27;, this.height)
-            .datum(this.data)
+            .attr(&#x27;height&#x27;, this.config.height)
+            .datum(this.config.data)
             .transition()
             .duration(350)
             .call(this.chart);
@@ -728,7 +685,7 @@ export class HMBChartComponent implements OnInit, OnChanges {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><div id="hmb"><svg></svg></div></div>'
-    var COMPONENTS = [{'name': 'BoxplotChartComponent', 'selector': 'boxplot-chart'},{'name': 'BulletChartComponent', 'selector': 'bullet-chart'},{'name': 'CandlestickChartComponent', 'selector': 'candlestick-chart'},{'name': 'CumulativelineChartComponent', 'selector': 'cumulativeline-chart'},{'name': 'DoughnutChartComponent', 'selector': 'doughnut-chart'},{'name': 'HMBChartComponent', 'selector': 'hmb-chart'},{'name': 'LineBarChartComponent', 'selector': 'line-bar-chart'},{'name': 'LineViewChartComponent', 'selector': 'line-view-chart'},{'name': 'OhlcChartComponent', 'selector': 'ohlc-chart'},{'name': 'PieChartComponent', 'selector': 'pie-chart'},{'name': 'ScatteredBubbleChartComponent', 'selector': 'scatteredbubble-chart'},{'name': 'SimpleLineChartComponent', 'selector': 'line-chart'},{'name': 'StackedAreaChartComponent', 'selector': 'stackedarea-chart'},{'name': 'SunburstChartComponent', 'selector': 'sunburst-chart'},{'name': 'VBarComponent', 'selector': 'vbar-chart'},{'name': 'VMBChartComponent', 'selector': 'vmb-chart'}];
+    var COMPONENTS = [{'name': 'BoxplotChartComponent', 'selector': 'boxplot-chart'},{'name': 'BulletChartComponent', 'selector': 'bullet-chart'},{'name': 'CandlestickChartComponent', 'selector': 'candlestick-chart'},{'name': 'CumulativelineChartComponent', 'selector': 'cumulativeline-chart'},{'name': 'DoughnutChartComponent', 'selector': 'doughnut-chart'},{'name': 'HMBChartComponent', 'selector': 'hmb-chart'},{'name': 'LineBarChartComponent', 'selector': 'line-bar-chart'},{'name': 'LineViewChartComponent', 'selector': 'line-view-chart'},{'name': 'OhlcChartComponent', 'selector': 'ohlc-chart'},{'name': 'PieChartComponent', 'selector': 'pie-chart'},{'name': 'ScatteredBubbleChartComponent', 'selector': 'scatteredbubble-chart'},{'name': 'SimpleLineChartComponent', 'selector': 'line-chart'},{'name': 'StackedAreaChartComponent', 'selector': 'stackedarea-chart'},{'name': 'SunburstChartComponent', 'selector': 'sunburst-chart'},{'name': 'VBarComponent', 'selector': 'discrete-bar-chart'},{'name': 'VMBChartComponent', 'selector': 'vmb-chart'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'HMBChartComponent'};
 </script>

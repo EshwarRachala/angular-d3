@@ -1,13 +1,14 @@
+import { NgModule, ModuleWithProviders } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+import { ChartService } from './nv-d3.service';
+
 import { CandlestickChartComponent } from './components/candle-stick.component';
 import { BulletChartComponent } from './components/bullet-chart.component';
 import { SunburstChartComponent } from './components/sunburst.componet';
 import { OhlcChartComponent } from './components/ohlc.component';
 import { LineBarChartComponent } from './components/linebar-chart.component';
 import { LineViewChartComponent } from './components/lineview-chart.component';
-import { NgModule, ModuleWithProviders } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
-import { ChartService } from './nv-d3.service';
 import { PieChartComponent } from './components/pie-chart.component';
 import { DoughnutChartComponent } from './components/doughnut-chart.component';
 import { HMBChartComponent } from './components/Hmb.component';
