@@ -10,11 +10,14 @@ import * as d3 from 'd3';
 export class SimpleLineChartComponent implements OnInit, OnChanges {
     chart: nv.LineChart;
     @Input() data: any;
+    @Input() margin: any;
     @Input() height: number;
     @Input() xlabel: string;
     @Input() ylabel: string;
 
-    constructor() { }
+    constructor() {
+        this.margin = { left: 100 };
+    }
 
     ngOnInit() {
         this.createChart();
@@ -32,20 +35,20 @@ export class SimpleLineChartComponent implements OnInit, OnChanges {
     createChart() {
 
         this.chart = nv.models.lineChart()
-            .margin({ left: 100 })
+            .margin(this.margin)
             .useInteractiveGuideline(true)
             .showLegend(true)
             .showYAxis(true)
-            .showXAxis(true);
-
+            .showXAxis(true)
+            .tooltips(true);
 
         this.chart.xAxis
-            .axisLabel('Time (s)')
+            .axisLabel(this.xlabel)
             .tickFormat(d3.format(',.1f'))
             .staggerLabels(true);
 
         this.chart.yAxis
-            .axisLabel('Voltage (v)')
+            .axisLabel(this.ylabel)
             .tickFormat(function (d) {
                 if (d == null) {
                     return 'N/A';
