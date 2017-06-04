@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation, OnChanges, Input } from '@angular/core';
 import * as nv from 'nvd3';
 import * as d3 from 'd3';
+import { ChartConfig } from '../chart-config';
 
 @Component({
     selector: 'boxplot-chart',
@@ -9,17 +10,13 @@ import * as d3 from 'd3';
 })
 export class BoxplotChartComponent implements OnInit, OnChanges {
     chart: nv.BoxPlotChart;
-    @Input() data: any;
-    @Input() height: number;
-    @Input() xlabel: string;
-    @Input() ylabel: string;
-
+    @Input() config: ChartConfig;
 
     constructor() { }
 
     ngOnInit() {
         this.createChart();
-        if (this.data) {
+        if (this.config.data) {
             this.updateChart();
         }
     }
@@ -35,7 +32,7 @@ export class BoxplotChartComponent implements OnInit, OnChanges {
         this.chart = nv.models.boxPlotChart()
             .x(function (d) { return d.label })
             .staggerLabels(true)
-            .maxBoxWidth(75) // prevent boxes from being incredibly wide
+            .maxBoxWidth(75)
             .yDomain([0, 500]);
 
     }
@@ -43,8 +40,8 @@ export class BoxplotChartComponent implements OnInit, OnChanges {
     updateChart() {
 
         d3.select('#boxplot svg')
-            .attr('height', this.height)
-            .datum(this.data)
+            .attr('height', this.config.height)
+            .datum(this.config.data)
             .transition()
             .duration(350)
             .call(this.chart);

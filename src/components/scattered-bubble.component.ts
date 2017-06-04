@@ -1,3 +1,4 @@
+import { ChartConfig } from '../chart-config';
 import { Component, OnInit, ViewEncapsulation, OnChanges, Input } from '@angular/core';
 import * as nv from 'nvd3';
 import * as d3 from 'd3';
@@ -9,17 +10,13 @@ import * as d3 from 'd3';
 })
 export class ScatteredBubbleChartComponent implements OnInit, OnChanges {
     chart: nv.ScatterChart;
-    @Input() data: any;
-    @Input() height: number;
-    @Input() xlabel: string;
-    @Input() ylabel: string;
-
+    @Input() config: ChartConfig;
 
     constructor() { }
 
     ngOnInit() {
         this.createChart();
-        if (this.data) {
+        if (this.config.data) {
             this.updateChart();
         }
     }
@@ -43,14 +40,13 @@ export class ScatteredBubbleChartComponent implements OnInit, OnChanges {
         // Axis settings
         this.chart.xAxis.tickFormat(d3.format('.02f'));
         this.chart.yAxis.tickFormat(d3.format('.02f'));
-
     }
 
     updateChart() {
 
         d3.select('#scatteredbubble svg')
-            .attr('height', this.height)
-            .datum(this.data)
+            .attr('height', this.config.height)
+            .datum(this.config.data)
             .transition()
             .duration(350)
             .call(this.chart);

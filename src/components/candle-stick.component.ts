@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation, OnChanges, Input } from '@angular/core';
 import * as nv from 'nvd3';
 import * as d3 from 'd3';
+import { ChartConfig } from '../chart-config';
 
 @Component({
     selector: 'candlestick-chart',
@@ -9,17 +10,14 @@ import * as d3 from 'd3';
 })
 export class CandlestickChartComponent implements OnInit, OnChanges {
     chart: nv.CandlestickBarChart;
-    @Input() data: any;
-    @Input() height: number;
-    @Input() xlabel: string;
-    @Input() ylabel: string;
+    @Input() config: ChartConfig;
 
 
     constructor() { }
 
     ngOnInit() {
         this.createChart();
-        if (this.data) {
+        if (this.config.data) {
             this.updateChart();
         }
     }
@@ -41,14 +39,14 @@ export class CandlestickChartComponent implements OnInit, OnChanges {
         const date: any = new Date();
 
         this.chart.xAxis
-            .axisLabel(this.xlabel)
+            .axisLabel(this.config.xlabel)
             .tickFormat(function (d) {
                 return d3.time.format('%x')(
                     new Date(date - (20000 * 86400000) + (d * 86400000)));
             });
 
         this.chart.yAxis
-            .axisLabel(this.ylabel)
+            .axisLabel(this.config.ylabel)
             .tickFormat(function (d, i) {
                 return '$' + d3.format(',.1f')(d);
             });
@@ -58,8 +56,8 @@ export class CandlestickChartComponent implements OnInit, OnChanges {
     updateChart() {
 
         d3.select('#candlestick svg')
-            .attr('height', this.height)
-            .datum(this.data)
+            .attr('height', this.config.height)
+            .datum(this.config.data)
             .transition()
             .duration(350)
             .call(this.chart);

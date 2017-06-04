@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation, OnChanges, Input } from '@angular/core';
 import * as nv from 'nvd3';
 import * as d3 from 'd3';
+import { ChartConfig } from '../chart-config';
 
 @Component({
     selector: 'sunburst-chart',
@@ -9,17 +10,14 @@ import * as d3 from 'd3';
 })
 export class SunburstChartComponent implements OnInit, OnChanges {
     chart: nv.SunburstChart;
-    @Input() data: any;
-    @Input() height: number;
-    @Input() xlabel: string;
-    @Input() ylabel: string;
+    @Input() config: ChartConfig;
 
 
     constructor() { }
 
     ngOnInit() {
         this.createChart();
-        if (this.data) {
+        if (this.config.data) {
             this.updateChart();
         }
     }
@@ -40,8 +38,8 @@ export class SunburstChartComponent implements OnInit, OnChanges {
     updateChart() {
 
         d3.select('#sunburst svg')
-            .attr('height', this.height)
-            .datum(this.data)
+            .attr('height', this.config.height)
+            .datum(this.config.data)
             .transition()
             .duration(350)
             .call(this.chart);

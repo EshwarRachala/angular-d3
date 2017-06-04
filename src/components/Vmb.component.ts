@@ -1,3 +1,4 @@
+import { ChartConfig } from '../chart-config';
 import { Component, OnInit, ViewEncapsulation, OnChanges, Input } from '@angular/core';
 import * as nv from 'nvd3';
 import * as d3 from 'd3';
@@ -9,17 +10,13 @@ import * as d3 from 'd3';
 })
 export class VMBChartComponent implements OnInit, OnChanges {
     chart: nv.MultiBarChart;
-    @Input() data: any;
-    @Input() height: number;
-    @Input() xlabel: string;
-    @Input() ylabel: string;
-
+    @Input() config: ChartConfig;
 
     constructor() { }
 
     ngOnInit() {
         this.createChart();
-        if (this.data) {
+        if (this.config.data) {
             this.updateChart();
         }
     }
@@ -44,14 +41,14 @@ export class VMBChartComponent implements OnInit, OnChanges {
                 .staggerLabels(true);
 
         this.chart.xAxis
-            .axisLabel(this.xlabel)
+            .axisLabel(this.config.xlabel)
             .axisLabelDistance(35)
             .showMaxMin(false)
             .tickFormat(d3.format(',.6f'));
         ;
 
         this.chart.yAxis
-            .axisLabel(this.ylabel)
+            .axisLabel(this.config.ylabel)
             .axisLabelDistance(-5)
             .tickFormat(d3.format(',.01f'));
     }
@@ -59,8 +56,8 @@ export class VMBChartComponent implements OnInit, OnChanges {
     updateChart() {
 
         d3.select('#vmb svg')
-            .attr('height', this.height)
-            .datum(this.data)
+            .attr('height', this.config.height)
+            .datum(this.config.data)
             .transition()
             .duration(350)
             .call(this.chart);

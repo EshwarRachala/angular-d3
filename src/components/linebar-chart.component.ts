@@ -1,3 +1,4 @@
+import { ChartConfig } from '../chart-config';
 import { Component, OnInit, ViewEncapsulation, OnChanges, Input } from '@angular/core';
 import * as nv from 'nvd3';
 import * as d3 from 'd3';
@@ -9,17 +10,14 @@ import * as d3 from 'd3';
 })
 export class LineBarChartComponent implements OnInit, OnChanges {
     chart: nv.LinePlusBarChart;
-    @Input() data: any;
-    @Input() height: number;
-    @Input() xlabel: string;
-    @Input() ylabel: string;
+    @Input() config: ChartConfig;
 
 
     constructor() { }
 
     ngOnInit() {
         this.createChart();
-        if (this.data) {
+        if (this.config.data) {
             this.updateChart();
         }
     }
@@ -57,8 +55,8 @@ export class LineBarChartComponent implements OnInit, OnChanges {
         }).showMaxMin(false);
 
         d3.select('#linebar svg')
-            .attr('height', this.height)
-            .datum(this.data)
+            .attr('height', this.config.height)
+            .datum(this.config.data)
             .transition()
             .duration(350)
             .call(this.chart);

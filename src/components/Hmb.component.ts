@@ -1,3 +1,4 @@
+import { ChartConfig } from '../chart-config';
 import { Component, OnInit, ViewEncapsulation, OnChanges, Input } from '@angular/core';
 import * as nv from 'nvd3';
 import * as d3 from 'd3';
@@ -9,17 +10,13 @@ import * as d3 from 'd3';
 })
 export class HMBChartComponent implements OnInit, OnChanges {
     chart: nv.MultiBarHorizontalChart;
-    @Input() data: any;
-    @Input() height: number;
-    @Input() margin: any;
+    @Input() config: ChartConfig
 
-    constructor() {
-        this.margin = { top: 30, right: 20, bottom: 50, left: 130 };
-    }
+    constructor() { }
 
     ngOnInit() {
         this.createChart();
-        if (this.data) {
+        if (this.config.data) {
             this.updateChart();
         }
     }
@@ -36,7 +33,7 @@ export class HMBChartComponent implements OnInit, OnChanges {
             .y(d => d.value)
             .showValues(true)
             .barColor(d3.scale.category20().range())
-            .margin(this.margin)
+            .margin(this.config.margin)
             .duration(250)
             .showControls(true)
             .showLegend(true);
@@ -52,8 +49,8 @@ export class HMBChartComponent implements OnInit, OnChanges {
     updateChart() {
 
         d3.select('#hmb svg')
-            .attr('height', this.height)
-            .datum(this.data)
+            .attr('height', this.config.height)
+            .datum(this.config.data)
             .transition()
             .duration(350)
             .call(this.chart);

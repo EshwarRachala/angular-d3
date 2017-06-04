@@ -1,22 +1,22 @@
+import { ChartConfig } from '../chart-config';
 import { Component, OnInit, ViewEncapsulation, OnChanges, Input } from '@angular/core';
 import * as nv from 'nvd3';
 import * as d3 from 'd3';
 
 @Component({
-    selector: 'vbar-chart',
+    selector: 'discrete-bar-chart',
     template: '<div id="vbar"><svg></svg></div>',
     encapsulation: ViewEncapsulation.None
 })
 export class VBarComponent implements OnInit, OnChanges {
     chart: nv.DiscreteBarChart;
-    @Input() data: any;
-    @Input() height: number;
+    @Input() config: ChartConfig;
 
     constructor() { }
 
     ngOnInit() {
         this.createChart();
-        if (this.data) {
+        if (this.config.data) {
             this.updateChart();
         }
     }
@@ -37,14 +37,15 @@ export class VBarComponent implements OnInit, OnChanges {
                 .showValues(true)
                 .showXAxis(true)
                 .showYAxis(true)
-                .duration(250);
+                .duration(250)
+                .tooltips(true);
     }
 
     updateChart() {
 
         d3.select('#vbar svg')
-            .attr('height', this.height)
-            .datum(this.data)
+            .attr('height', this.config.height)
+            .datum(this.config.data)
             .transition()
             .duration(350)
             .call(this.chart);
