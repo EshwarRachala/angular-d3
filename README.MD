@@ -101,6 +101,16 @@ export class ChartComponent implements OnInit, OnChanges {
 
 ```typescript
 
+export class ChartConfig {
+    data: any;
+    margin: any;
+    height: number;
+    width?: number;
+    xlabel?: string;
+    ylabel?: string;
+}
+
+
 <boxplot-chart [config]="config"></boxplot-chart>
 <candlestick-chart [config]="config"></candlestick-chart>
 <cumulativeline-chart [config]="config"></cumulativeline-chart>

@@ -3,6 +3,6 @@ export class ChartConfig {
     margin: any;
     height: number;
     width?: number;
-    xlabel: string;
-    ylabel: string;
+    xlabel?: string;
+    ylabel?: string;
 }
