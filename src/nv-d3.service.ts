@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import nv from 'nvd3';
+import * as nv from 'nvd3';
 import * as d3 from 'd3';
 
 @Injectable()

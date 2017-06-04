@@ -1,5 +1,6 @@
+import { analyzeNgModules } from '@angular/compiler';
 import { Component, OnInit, ViewEncapsulation, ViewChild, ElementRef, OnChanges, Input } from '@angular/core';
-import nv from 'nvd3';
+import * as nv from 'nvd3';
 import * as d3 from 'd3';
 
 @Component({
@@ -8,7 +9,7 @@ import * as d3 from 'd3';
     encapsulation: ViewEncapsulation.None
 })
 export class LineBarChartComponent implements OnInit, OnChanges {
-    chart: any;
+    chart: nv.LinePlusBarChart;
     @Input() data: any;
     @Input() height: number;
     @Input() xlabel: string;
@@ -34,8 +35,8 @@ export class LineBarChartComponent implements OnInit, OnChanges {
 
         this.chart = nv.models.linePlusBarChart()
             .margin({ top: 30, right: 60, bottom: 50, left: 70 })
-            .x(function (d, i) { return i })
-            .y(function (d, i) { return d[1] })
+            .x(i => i)
+            .y(d => d[1])
             .color(d3.scale.category10().range());
 
 

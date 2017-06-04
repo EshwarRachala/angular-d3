@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild, ElementRef, OnChanges, Input } from '@angular/core';
-import nv from 'nvd3';
+import * as nv from 'nvd3';
 import * as d3 from 'd3';
 
 @Component({
@@ -8,7 +8,7 @@ import * as d3 from 'd3';
     encapsulation: ViewEncapsulation.None
 })
 export class VBarComponent implements OnInit, OnChanges {
-    chart: any;
+    chart: nv.DiscreteBarChart;
     @Input() data: any;
     @Input() height: number;
 
@@ -38,10 +38,6 @@ export class VBarComponent implements OnInit, OnChanges {
                 .showXAxis(true)
                 .showYAxis(true)
                 .duration(250);
-
-        this.chart.options = nv.utils.optionsFunc.bind(this.chart);
-
-
     }
 
     updateChart() {

@@ -38,6 +38,7 @@
     "url": "https://github.com/EshwarRachala/angular-d3.git/issues"
   },
   "dependencies": {
+    "@types/nvd3": "1.8.37",
     "d3": "3.5.17",
     "nvd3": "1.8.5"
   },

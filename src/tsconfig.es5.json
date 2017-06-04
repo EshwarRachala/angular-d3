@@ -4,6 +4,9 @@
     "module": "es2015",
     "target": "es5",
     "baseUrl": ".",
+    "typeRoots": [
+      "types"
+    ],
     "stripInternal": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,

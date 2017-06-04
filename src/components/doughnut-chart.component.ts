@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild, ElementRef, OnChanges, Input } from '@angular/core';
-import nv from 'nvd3';
+import * as nv from 'nvd3';
 import * as d3 from 'd3';
 
 @Component({
@@ -10,7 +10,7 @@ import * as d3 from 'd3';
 export class DoughnutChartComponent implements OnInit, OnChanges {
     @Input() data: any;
     @Input() height: number;
-    chart: any;
+    chart: nv.PieChart;
 
     constructor() { }
 

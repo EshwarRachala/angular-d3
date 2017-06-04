@@ -1,14 +1,14 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild, ElementRef, OnChanges, Input } from '@angular/core';
-import nv from 'nvd3';
+import * as nv from 'nvd3';
 import * as d3 from 'd3';
 
 @Component({
     selector: 'bullet-chart',
-    template: '<div id="bulletchart"></div>',
+    template: '<div id="bulletchart"><svg></svg></div>',
     encapsulation: ViewEncapsulation.None
 })
 export class BulletChartComponent implements OnInit, OnChanges {
-    chart: any;
+    chart: nv.BulletChart;
     @Input() data: any;
     @Input() height: number;
     @Input() width: number;
@@ -32,32 +32,16 @@ export class BulletChartComponent implements OnInit, OnChanges {
     }
 
     createChart() {
-
         this.chart = nv.models.bulletChart();
-
-        this.chart.xAxis
-            .axisLabel(this.xlabel)
-            .axisLabelDistance(35)
-            .showMaxMin(false)
-            .tickFormat(d3.format(',.6f'));
-        ;
-
-        this.chart.yAxis
-            .axisLabel(this.ylabel)
-            .axisLabelDistance(-5)
-            .tickFormat(d3.format(',.01f'));
     }
 
     updateChart() {
 
-        d3.select('#bulletchart')
-            .selectAll('svg')
+        d3.select('#bulletchart svg')
             .data(this.data)
-            .enter()
-            .append('svg')
-            .attr('class', 'bullet nvd3')
-            .attr('width', this.width)
-            .attr('height', this.height);
+            .transition()
+            .duration(1000)
+            .call(this.chart)
 
         nv.utils.windowResize(this.chart.update);
 

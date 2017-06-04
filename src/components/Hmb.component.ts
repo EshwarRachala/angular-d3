@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild, ElementRef, OnChanges, Input } from '@angular/core';
-import nv from 'nvd3';
+import * as nv from 'nvd3';
 import * as d3 from 'd3';
 
 @Component({
@@ -8,11 +8,14 @@ import * as d3 from 'd3';
     encapsulation: ViewEncapsulation.None
 })
 export class HMBChartComponent implements OnInit, OnChanges {
-    chart: any;
+    chart: nv.MultiBarHorizontalChart;
     @Input() data: any;
     @Input() height: number;
+    @Input() margin: any;
 
-    constructor() { }
+    constructor() {
+        this.margin = { top: 30, right: 20, bottom: 50, left: 130 };
+    }
 
     ngOnInit() {
         this.createChart();
@@ -28,13 +31,12 @@ export class HMBChartComponent implements OnInit, OnChanges {
     }
 
     createChart() {
-
         this.chart = nv.models.multiBarHorizontalChart()
-            .x(function (d) { return d.label })
-            .y(function (d) { return d.value })
+            .x(d => d.label)
+            .y(d => d.value)
             .showValues(true)
             .barColor(d3.scale.category20().range())
-            .margin({ top: 30, right: 20, bottom: 50, left: 130 })
+            .margin(this.margin)
             .duration(250)
             .showControls(true)
             .showLegend(true);

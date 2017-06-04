@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild, ElementRef, OnChanges, Input } from '@angular/core';
-import nv from 'nvd3';
+import * as nv from 'nvd3';
 import * as d3 from 'd3';
 
 @Component({
@@ -8,7 +8,7 @@ import * as d3 from 'd3';
     encapsulation: ViewEncapsulation.None
 })
 export class StackedAreaChartComponent implements OnInit, OnChanges {
-    chart: any;
+    chart: nv.StackedAreaChart;
     @Input() data: any;
     @Input() height: number;
     @Input() xlabel: string;
