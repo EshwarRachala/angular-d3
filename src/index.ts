@@ -15,8 +15,13 @@ import { VMBChartComponent } from './components/Vmb.component';
 import { VBarComponent } from './components/VerticalBar.component';
 import { SimpleLineChartComponent } from './components/simple-line.component';
 import { BoxplotChartComponent } from './components/boxplot.component';
+import { CumulativelineChartComponent } from './components/cumulative-line.component';
+import { ScatteredBubbleChartComponent } from './components/scattered-bubble.component';
+import { StackedAreaChartComponent } from './components/stackedarea.component';
 
 export * from './nv-d3.service';
+export * from './components/stackedarea.component';
+export * from './components/cumulative-line.component';
 export * from './components/candle-stick.component';
 export * from './components/bullet-chart.component';
 export * from './components/boxplot.component';
@@ -27,9 +32,11 @@ export * from './components/Hmb.component';
 export * from './components/Vmb.component';
 export * from './components/VerticalBar.component';
 export * from './components/simple-line.component';
-export * from  './components/simple-line.component';
+export * from './components/simple-line.component';
 export * from './components/linebar-chart.component';
 export * from './components/ohlc.component';
+export * from './components/scattered-bubble.component';
+
 @NgModule({
   imports: [
     CommonModule
@@ -47,7 +54,10 @@ export * from './components/ohlc.component';
     SunburstChartComponent,
     BoxplotChartComponent,
     BulletChartComponent,
-    CandlestickChartComponent
+    CandlestickChartComponent,
+    CumulativelineChartComponent,
+    ScatteredBubbleChartComponent,
+    StackedAreaChartComponent
   ],
   exports: [
     PieChartComponent,
@@ -62,7 +72,10 @@ export * from './components/ohlc.component';
     SunburstChartComponent,
     BoxplotChartComponent,
     BulletChartComponent,
-    CandlestickChartComponent
+    CandlestickChartComponent,
+    CumulativelineChartComponent,
+    ScatteredBubbleChartComponent,
+    StackedAreaChartComponent
   ],
   providers: [ChartService]
 })
