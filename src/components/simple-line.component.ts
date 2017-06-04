@@ -12,9 +12,7 @@ export class SimpleLineChartComponent implements OnInit, OnChanges {
     chart: nv.LineChart;
     @Input() config: ChartConfig;
 
-    constructor() {
-        this.config.margin = { left: 100 };
-    }
+    constructor() { }
 
     ngOnInit() {
         this.createChart();
