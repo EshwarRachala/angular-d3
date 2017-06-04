@@ -4,7 +4,7 @@ import * as d3 from 'd3';
 
 @Component({
     selector: 'hmb-chart',
-    template: '<svg id="chart"></svg>',
+    template: '<div id="hmb"><svg></svg></div>',
     encapsulation: ViewEncapsulation.None
 })
 export class HMBChartComponent implements OnInit, OnChanges {
@@ -49,7 +49,7 @@ export class HMBChartComponent implements OnInit, OnChanges {
 
     updateChart() {
 
-        d3.select('#chart')
+        d3.select('#hmb svg')
             .attr('height', this.height)
             .datum(this.data)
             .transition()

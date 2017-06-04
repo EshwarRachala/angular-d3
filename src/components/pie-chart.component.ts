@@ -4,7 +4,7 @@ import * as d3 from 'd3';
 
 @Component({
     selector: 'pie-chart',
-    template: '<svg id="chart"></svg>',
+    template: '<div id="pie"><svg></svg></div>',
     encapsulation: ViewEncapsulation.None
 })
 export class PieChartComponent implements OnInit, OnChanges {
@@ -37,7 +37,7 @@ export class PieChartComponent implements OnInit, OnChanges {
     }
 
     updateChart() {
-        d3.select('#chart')
+        d3.select('#pie svg')
             .attr('height', this.height)
             .datum(this.data)
             .transition()
