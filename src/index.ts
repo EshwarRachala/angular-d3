@@ -1,3 +1,4 @@
+import { BulletChartComponent } from './components/bullet-chart.component';
 import { SunburstChartComponent } from './components/sunburst.componet';
 import { OhlcChartComponent } from './components/ohlc.component';
 import { LineBarChartComponent } from './components/linebar-chart.component';
@@ -12,8 +13,11 @@ import { HMBChartComponent } from './components/Hmb.component';
 import { VMBChartComponent } from './components/Vmb.component';
 import { VBarComponent } from './components/VerticalBar.component';
 import { SimpleLineChartComponent } from './components/simple-line.component';
+import { BoxplotChartComponent } from './components/boxplot.component';
 
 export * from './nv-d3.service';
+export * from './components/bullet-chart.component';
+export * from './components/boxplot.component';
 export * from './components/sunburst.componet';
 export * from './components/pie-chart.component';
 export * from './components/doughnut-chart.component';
@@ -38,7 +42,9 @@ export * from './components/ohlc.component';
     LineViewChartComponent,
     LineBarChartComponent,
     OhlcChartComponent,
-    SunburstChartComponent
+    SunburstChartComponent,
+    BoxplotChartComponent,
+    BulletChartComponent
   ],
   exports: [
     PieChartComponent,
@@ -50,7 +56,9 @@ export * from './components/ohlc.component';
     LineViewChartComponent,
     LineBarChartComponent,
     OhlcChartComponent,
-    SunburstChartComponent
+    SunburstChartComponent,
+    BoxplotChartComponent,
+    BulletChartComponent
   ],
   providers: [ChartService]
 })
