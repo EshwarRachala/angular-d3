@@ -19,7 +19,9 @@ import { CumulativelineChartComponent } from './components/cumulative-line.compo
 import { ScatteredBubbleChartComponent } from './components/scattered-bubble.component';
 import { StackedAreaChartComponent } from './components/stackedarea.component';
 
+
 export * from './nv-d3.service';
+export * from './chart-config';
 export * from './components/stackedarea.component';
 export * from './components/cumulative-line.component';
 export * from './components/candle-stick.component';

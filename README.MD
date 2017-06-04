@@ -30,7 +30,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
-// Import your library
+
 import { ChartModule } from 'ngnvd3';
 
 @NgModule({
@@ -48,6 +48,7 @@ import { ChartModule } from 'ngnvd3';
 export class AppModule { }
 
 ## Charts
+
 
 ### Do
 

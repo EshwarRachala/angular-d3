@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewEncapsulation, ViewChild, ElementRef, OnChanges, Input } from '@angular/core';
+import { ChartConfig } from '../chart-config';
+import { Component, OnInit, ViewEncapsulation, OnChanges, Input } from '@angular/core';
 import * as nv from 'nvd3';
 import * as d3 from 'd3';
 
@@ -9,19 +10,15 @@ import * as d3 from 'd3';
 })
 export class SimpleLineChartComponent implements OnInit, OnChanges {
     chart: nv.LineChart;
-    @Input() data: any;
-    @Input() margin: any;
-    @Input() height: number;
-    @Input() xlabel: string;
-    @Input() ylabel: string;
+    @Input() config: ChartConfig;
 
     constructor() {
-        this.margin = { left: 100 };
+        this.config.margin = { left: 100 };
     }
 
     ngOnInit() {
         this.createChart();
-        if (this.data) {
+        if (this.config.data) {
             this.updateChart();
         }
     }
@@ -35,7 +32,7 @@ export class SimpleLineChartComponent implements OnInit, OnChanges {
     createChart() {
 
         this.chart = nv.models.lineChart()
-            .margin(this.margin)
+            .margin(this.config.margin)
             .useInteractiveGuideline(true)
             .showLegend(true)
             .showYAxis(true)
@@ -43,28 +40,25 @@ export class SimpleLineChartComponent implements OnInit, OnChanges {
             .tooltips(true);
 
         this.chart.xAxis
-            .axisLabel(this.xlabel)
+            .axisLabel(this.config.xlabel)
             .tickFormat(d3.format(',.1f'))
             .staggerLabels(true);
 
         this.chart.yAxis
-            .axisLabel(this.ylabel)
+            .axisLabel(this.config.ylabel)
             .tickFormat(function (d) {
                 if (d == null) {
                     return 'N/A';
                 }
                 return d3.format(',.2f')(d);
-            })
-            ;
-
-
+            });
     }
 
     updateChart() {
 
         d3.select('#simpleline svg')
-            .attr('height', this.height)
-            .datum(this.data)
+            .attr('height', this.config.height)
+            .datum(this.config.data)
             .transition()
             .duration(350)
             .call(this.chart);
