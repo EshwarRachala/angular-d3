@@ -1,14 +1,13 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild, ElementRef, OnChanges, Input } from '@angular/core';
 import nv from 'nvd3';
 import * as d3 from 'd3';
-import { IchartConfig } from 'components/chart-config.component';
 
 @Component({
     selector: 'doughnut-chart',
     template: '<div id="doughnutchart"><svg></svg></div>',
     encapsulation: ViewEncapsulation.None
 })
-export class DoughnutChartComponent implements OnInit, OnChanges, IchartConfig {
+export class DoughnutChartComponent implements OnInit, OnChanges {
     @Input() data: any;
     @Input() height: number;
     chart: any;
