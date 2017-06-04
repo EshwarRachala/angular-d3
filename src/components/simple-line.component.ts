@@ -4,7 +4,7 @@ import * as nv from 'nvd3';
 import * as d3 from 'd3';
 
 @Component({
-    selector: 'line-chart',
+    selector: 'simpleline-chart',
     template: '<div id="simpleline"><svg></svg></div>',
     encapsulation: ViewEncapsulation.None
 })

@@ -4,7 +4,7 @@ import * as nv from 'nvd3';
 import * as d3 from 'd3';
 
 @Component({
-    selector: 'line-bar-chart',
+    selector: 'linebar-chart',
     template: '<div id="linebar"><svg></svg></div>',
     encapsulation: ViewEncapsulation.None
 })

@@ -4,7 +4,7 @@ import * as nv from 'nvd3';
 import * as d3 from 'd3';
 
 @Component({
-    selector: 'discrete-bar-chart',
+    selector: 'discretebar-chart',
     template: '<div id="vbar"><svg></svg></div>',
     encapsulation: ViewEncapsulation.None
 })

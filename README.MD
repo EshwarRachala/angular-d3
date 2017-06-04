@@ -21,17 +21,13 @@ Import the library in any Angular application by running:
 ```bash
 $ npm install ngnvd3
 ```
-
-and then from your Angular `AppModule`:
+and then from your Angular `AppModule` inject Chartservice and import chartmodule
 
 ```typescript
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
-
-
-import { ChartModule } from 'ngnvd3';
+import { ChartModule,ChartService } from 'ngnvd3';
 
 @NgModule({
   declarations: [
@@ -39,7 +35,6 @@ import { ChartModule } from 'ngnvd3';
   ],
   imports: [
     BrowserModule,
-    // Specify your library as an import
     ChartModule
   ],
   providers: [ChartService],
@@ -47,11 +42,82 @@ import { ChartModule } from 'ngnvd3';
 })
 export class AppModule { }
 
-## Charts
+```
 
 
-### Do
+## To use angular ChartsService 
 
+```typescript
+import { ChartService, NV, D3 } from 'ngnvd3';
+
+@Component({
+  selector: 'app-chart',
+  template: `<div class="gallery with-transitions" id="chart1">
+                <svg height="500"></svg>
+             </div>`
+})
+
+export class ChartComponent implements OnInit, OnChanges {
+    chart: nv.BoxPlotChart;
+    @Input() config: ChartConfig;
+
+    constructor() { }
+
+    ngOnInit() {
+        this.createChart();
+        if (this.config.data) {
+            this.updateChart();
+        }
+    }
+
+    ngOnChanges() {
+        if (this.chart) {
+            this.updateChart();
+        }
+    }
+
+    createChart() {
+    this.chart = nv.models.boxPlotChart()
+            .x(function (d) { return d.label })
+            .staggerLabels(true)
+            .maxBoxWidth(75)
+            .yDomain([0, 500]);
+    }
+
+    updateChart() {
+      d3.select('#boxplot svg')
+            .attr('height', this.config.height)
+            .datum(this.config.data)
+            .transition()
+            .duration(350)
+            .call(this.chart);
+      nv.utils.windowResize(this.chart.update);
+  }
+}
+
+```
+
+## To use Chart components directly
+
+```typescript
+
+<boxplot-chart [config]="config"></boxplot-chart>
+<candlestick-chart [config]="config"></candlestick-chart>
+<cumulativeline-chart [config]="config"></cumulativeline-chart>
+<doughnut-chart [config]="config"></doughnut-chart>
+<hmb-chart [config]="config"></hmb-chart>
+<linebar-chart [config]="config"></linebar-chart>
+<lineview-chart [config]="config"></lineview-chart>
+<ohlc-chart [config]="config"></ohlc-chart>
+<pie-chart [config]="config"></pie-chart>
+<scatteredbubble-chart [config]="config"></scatteredbubble-chart>
+<simpleline-chart [config]="config"></simpleline-chart>
+<stackedarea-chart [config]="config"></stackedarea-chart>
+<sunburst-chart [config]="config"></sunburst-chart>
+<discretebar-chart [config]="config"></discretebar-chart>
+<vmb-chart [config]="config"></vmb-chart>
+
+```
 
 ## Development
 
@@ -68,6 +134,7 @@ $ npm run lint
 ```
 
 ## Further help
+
 http://nvd3.org/index.html
 
 ## License

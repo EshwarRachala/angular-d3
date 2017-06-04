@@ -4,7 +4,7 @@ import * as d3 from 'd3';
 import { ChartConfig } from '../chart-config';
 
 @Component({
-    selector: 'line-view-chart',
+    selector: 'lineview-chart',
     template: '<div id="lnvchart"><svg></svg></div>',
     encapsulation: ViewEncapsulation.None
 })
