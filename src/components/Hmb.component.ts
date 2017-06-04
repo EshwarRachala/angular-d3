@@ -47,7 +47,6 @@ export class HMBChartComponent implements OnInit, OnChanges {
     }
 
     updateChart() {
-
         d3.select('#hmb svg')
             .attr('height', this.config.height)
             .datum(this.config.data)

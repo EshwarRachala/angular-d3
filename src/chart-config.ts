@@ -1,4 +1,4 @@
-export interface ChartConfig {
+export class ChartConfig {
     data: any;
     margin: any;
     height: number;
