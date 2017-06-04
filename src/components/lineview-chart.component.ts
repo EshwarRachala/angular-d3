@@ -31,6 +31,9 @@ export class LineViewChartComponent implements OnInit, OnChanges {
     createChart() {
 
         this.chart = nv.models.lineWithFocusChart();
+
+        this.chart.tooltips(true);
+
         this.chart.xAxis
             .tickFormat(d3.format(',f'));
 
