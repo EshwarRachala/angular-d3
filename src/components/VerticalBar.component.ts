@@ -11,9 +11,6 @@ export class VBarComponent implements OnInit, OnChanges {
     chart: any;
     @Input() data: any;
     @Input() height: number;
-    @Input() xlabel: string;
-    @Input() ylabel: string;
-
 
     constructor() { }
 
@@ -33,27 +30,18 @@ export class VBarComponent implements OnInit, OnChanges {
     createChart() {
 
         this.chart =
-            nv.models.multiBarChart()
-                .barColor(d3.scale.category20().range())
-                .reduceXTicks(true)
-                .duration(350)
-                .margin({ bottom: 100, left: 70 })
-                .rotateLabels(45)
-                .showControls(true)
-                .groupSpacing(0.1)
-                .staggerLabels(true);
+            nv.models.discreteBarChart()
+                .x(d => d.label)
+                .y(d => d.value)
+                .staggerLabels(true)
+                .showValues(true)
+                .showXAxis(true)
+                .showYAxis(true)
+                .duration(250);
 
-        this.chart.xAxis
-            .axisLabel(this.xlabel)
-            .axisLabelDistance(35)
-            .showMaxMin(false)
-            .tickFormat(d3.format(',.6f'));
-        ;
+        this.chart.options = nv.utils.optionsFunc.bind(this.chart);
 
-        this.chart.yAxis
-            .axisLabel(this.ylabel)
-            .axisLabelDistance(-5)
-            .tickFormat(d3.format(',.01f'));
+
     }
 
     updateChart() {
