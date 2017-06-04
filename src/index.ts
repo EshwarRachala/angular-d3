@@ -1,3 +1,4 @@
+import { CandlestickChartComponent } from './components/candle-stick.component';
 import { BulletChartComponent } from './components/bullet-chart.component';
 import { SunburstChartComponent } from './components/sunburst.componet';
 import { OhlcChartComponent } from './components/ohlc.component';
@@ -16,6 +17,7 @@ import { SimpleLineChartComponent } from './components/simple-line.component';
 import { BoxplotChartComponent } from './components/boxplot.component';
 
 export * from './nv-d3.service';
+export * from './components/candle-stick.component';
 export * from './components/bullet-chart.component';
 export * from './components/boxplot.component';
 export * from './components/sunburst.componet';
@@ -44,7 +46,8 @@ export * from './components/ohlc.component';
     OhlcChartComponent,
     SunburstChartComponent,
     BoxplotChartComponent,
-    BulletChartComponent
+    BulletChartComponent,
+    CandlestickChartComponent
   ],
   exports: [
     PieChartComponent,
@@ -58,7 +61,8 @@ export * from './components/ohlc.component';
     OhlcChartComponent,
     SunburstChartComponent,
     BoxplotChartComponent,
-    BulletChartComponent
+    BulletChartComponent,
+    CandlestickChartComponent
   ],
   providers: [ChartService]
 })
