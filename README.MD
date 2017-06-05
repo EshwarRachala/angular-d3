@@ -60,10 +60,12 @@ import { ChartService, NV, D3 } from 'ngnvd3';
 export class ChartComponent implements OnInit, OnChanges {
     private nv: NV;
     private d3: D3;
-    private data: any; 
+    private data: any; // provide data for the chart 
     chart: nv.BoxPlotChart; 
 
-    constructor() {  
+    constructor(private service: ChartService) {
+         this.nv = service.getnvD3();
+        this.d3 = service.getD3();
      }
 
     ngOnInit() {
