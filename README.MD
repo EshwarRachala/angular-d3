@@ -58,14 +58,17 @@ import { ChartService, NV, D3 } from 'ngnvd3';
 })
 
 export class ChartComponent implements OnInit, OnChanges {
-    chart: nv.BoxPlotChart;
-    @Input() config: ChartConfig;
+    private nv: NV;
+    private d3: D3;
+    private data: any; 
+    chart: nv.BoxPlotChart; 
 
-    constructor() { }
+    constructor() {  
+     }
 
     ngOnInit() {
         this.createChart();
-        if (this.config.data) {
+        if (this.data) {
             this.updateChart();
         }
     }
@@ -86,8 +89,7 @@ export class ChartComponent implements OnInit, OnChanges {
 
     updateChart() {
       d3.select('#boxplot svg')
-            .attr('height', this.config.height)
-            .datum(this.config.data)
+            .datum(this.data)
             .transition()
             .duration(350)
             .call(this.chart);
