@@ -45,7 +45,7 @@ export class AppModule { }
 ```
 
 
-## To use angular ChartsService 
+## To use angular ChartsService
 
 ```typescript
 import { ChartService, NV, D3 } from 'ngnvd3';
@@ -95,7 +95,7 @@ export class ChartComponent implements OnInit, OnChanges {
             .transition()
             .duration(350)
             .call(this.chart);
-            
+
       nv.utils.windowResize(this.chart.update);
   }
 }
@@ -106,36 +106,70 @@ export class ChartComponent implements OnInit, OnChanges {
 
 ```typescript
 
-export class ChartConfig {
-    data: any;
-    margin: any;
-    height: number;
-    width?: number;
-    xlabel?: string;
-    ylabel?: string;
+import { ChartConfig } from 'ngnvd3';
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-demo',
+  template: `<button (click)="click($event)">submit</button>
+                <hmb-chart *ngIf="config" [(config)]="config"></hmb-chart>`
+})
+export class DemoComponent {
+  public config: ChartConfig = <ChartConfig>{};
+
+  constructor() {
+    this.getconfig();
+  }
+
+  getconfig() {
+    this.config = <ChartConfig>{};
+    this.config.margin = { left: 100 };
+    this.config.height = 500;
+    this.config.data = [
+      {
+        'key': 'Series 1',
+        'color': '#d67777',
+        'values': [
+          {
+            'label': 'Group A',
+            'value': 1.8746444827653
+          },
+          {
+            'label': 'Group B',
+            'value': 8.0961543492239
+          }
+        ]
+      }
+    ];
+  }
+
+  click(event) {
+    this.getconfig();
+    this.config.height = 600;
+    event.preventDefault();
+  }
 }
+```
 
+## Available charts
 
-const config = new ChartConfig();
-this.config.height = height;
-this.config.data = data;
-...etc
+```typescript
 
-<boxplot-chart [config]="config"></boxplot-chart>
-<candlestick-chart [config]="config"></candlestick-chart>
-<cumulativeline-chart [config]="config"></cumulativeline-chart>
-<doughnut-chart [config]="config"></doughnut-chart>
-<hmb-chart [config]="config"></hmb-chart>
-<linebar-chart [config]="config"></linebar-chart>
-<lineview-chart [config]="config"></lineview-chart>
-<ohlc-chart [config]="config"></ohlc-chart>
-<pie-chart [config]="config"></pie-chart>
-<scatteredbubble-chart [config]="config"></scatteredbubble-chart>
-<simpleline-chart [config]="config"></simpleline-chart>
-<stackedarea-chart [config]="config"></stackedarea-chart>
-<sunburst-chart [config]="config"></sunburst-chart>
-<discretebar-chart [config]="config"></discretebar-chart>
-<vmb-chart [config]="config"></vmb-chart>
+        <boxplot-chart [config]="config"></boxplot-chart>
+        <candlestick-chart [config]="config"></candlestick-chart>
+        <cumulativeline-chart [config]="config"></cumulativeline-chart>
+        <doughnut-chart [config]="config"></doughnut-chart>
+        <hmb-chart [config]="config"></hmb-chart>
+        <linebar-chart [config]="config"></linebar-chart>
+        <lineview-chart [config]="config"></lineview-chart>
+        <ohlc-chart [config]="config"></ohlc-chart>
+        <pie-chart [config]="config"></pie-chart>
+        <scatteredbubble-chart [config]="config"></scatteredbubble-chart>
+        <simpleline-chart [config]="config"></simpleline-chart>
+        <stackedarea-chart [config]="config"></stackedarea-chart>
+        <sunburst-chart [config]="config"></sunburst-chart>
+        <discretebar-chart [config]="config"></discretebar-chart>
+        <vmb-chart [config]="config"></vmb-chart>
 
 ```
 
