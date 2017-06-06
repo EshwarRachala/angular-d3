@@ -95,6 +95,7 @@ export class ChartComponent implements OnInit, OnChanges {
             .transition()
             .duration(350)
             .call(this.chart);
+            
       nv.utils.windowResize(this.chart.update);
   }
 }
@@ -114,6 +115,11 @@ export class ChartConfig {
     ylabel?: string;
 }
 
+
+const config = new ChartConfig();
+this.config.height = height;
+this.config.data = data;
+...etc
 
 <boxplot-chart [config]="config"></boxplot-chart>
 <candlestick-chart [config]="config"></candlestick-chart>

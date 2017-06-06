@@ -34,7 +34,7 @@ export class CandlestickChartComponent implements OnInit, OnChanges {
             .x(function (d) { return d['date'] })
             .y(function (d) { return d['close'] })
             .duration(250)
-            .margin({ left: 75, bottom: 50 });
+            .margin(this.config.margin);
 
         const date: any = new Date();
 

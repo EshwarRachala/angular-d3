@@ -34,8 +34,7 @@ export class SimpleLineChartComponent implements OnInit, OnChanges {
             .useInteractiveGuideline(true)
             .showLegend(true)
             .showYAxis(true)
-            .showXAxis(true)
-            .tooltips(true);
+            .showXAxis(true);
 
         this.chart.xAxis
             .axisLabel(this.config.xlabel)

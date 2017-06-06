@@ -34,7 +34,7 @@ export class VMBChartComponent implements OnInit, OnChanges {
                 .barColor(d3.scale.category20().range())
                 .reduceXTicks(true)
                 .duration(350)
-                .margin({ bottom: 100, left: 70 })
+                .margin(this.config.margin)
                 .rotateLabels(45)
                 .showControls(true)
                 .groupSpacing(0.1)

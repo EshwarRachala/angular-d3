@@ -37,8 +37,7 @@ export class VBarComponent implements OnInit, OnChanges {
                 .showValues(true)
                 .showXAxis(true)
                 .showYAxis(true)
-                .duration(250)
-                .tooltips(true);
+                .duration(250);
     }
 
     updateChart() {

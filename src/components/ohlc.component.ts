@@ -34,19 +34,19 @@ export class OhlcChartComponent implements OnInit, OnChanges {
             .x(function (d) { return d['date'] })
             .y(function (d) { return d['close'] })
             .duration(250)
-            .margin({ left: 75, bottom: 50 });
+            .margin(this.config.margin);
 
         const date: any = new Date();
 
         this.chart.xAxis
-            .axisLabel('Dates')
+            .axisLabel(this.config.xlabel)
             .tickFormat(function (d) {
                 return d3.time.format('%x')
                     (new Date(date - (20000 * 86400000) + (d * 86400000)));
             });
 
         this.chart.yAxis
-            .axisLabel('Stock Price')
+            .axisLabel(this.config.ylabel)
             .tickFormat(function (d, i) { return '$' + d3.format(',.1f')(d); });
     }
 
