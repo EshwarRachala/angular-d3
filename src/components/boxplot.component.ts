@@ -39,10 +39,8 @@ export class BoxplotChartComponent implements OnInit, OnChanges {
 
     updateChart() {
 
-        const height = this.config.height;
-
         d3.select('#boxplot svg')
-            .attr('height', this.)
+            .attr('height', this.config.height !== undefined ? 500 : this.config.height)
             .datum(this.config.data)
             .transition()
             .duration(350)

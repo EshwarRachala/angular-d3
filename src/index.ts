@@ -5,7 +5,7 @@ import { ChartService } from './nv-d3.service';
 
 import { CandlestickChartComponent } from './components/candle-stick.component';
 import { BulletChartComponent } from './components/bullet-chart.component';
-import { SunburstChartComponent } from './components/sunburst.componet';
+import { SunburstChartComponent } from './components/sunburst.component';
 import { OhlcChartComponent } from './components/ohlc.component';
 import { LineBarChartComponent } from './components/linebar-chart.component';
 import { LineViewChartComponent } from './components/lineview-chart.component';
@@ -28,7 +28,7 @@ export * from './components/cumulative-line.component';
 export * from './components/candle-stick.component';
 export * from './components/bullet-chart.component';
 export * from './components/boxplot.component';
-export * from './components/sunburst.componet';
+export * from './components/sunburst.component';
 export * from './components/pie-chart.component';
 export * from './components/doughnut-chart.component';
 export * from './components/Hmb.component';

@@ -37,12 +37,12 @@ export class SimpleLineChartComponent implements OnInit, OnChanges {
             .showXAxis(true);
 
         this.chart.xAxis
-            .axisLabel(this.config.xlabel)
+            .axisLabel(this.config.xlabel !== undefined ? '' : this.config.xlabel)
             .tickFormat(d3.format(',.1f'))
             .staggerLabels(true);
 
         this.chart.yAxis
-            .axisLabel(this.config.ylabel)
+            .axisLabel(this.config.ylabel !== undefined ? '' : this.config.ylabel)
             .tickFormat(function (d) {
                 if (d == null) {
                     return 'N/A';

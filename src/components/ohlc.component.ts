@@ -12,7 +12,6 @@ export class OhlcChartComponent implements OnInit, OnChanges {
     chart: nv.OhlcBarChart;
     @Input() config: ChartConfig;
 
-
     constructor() { }
 
     ngOnInit() {
@@ -39,14 +38,14 @@ export class OhlcChartComponent implements OnInit, OnChanges {
         const date: any = new Date();
 
         this.chart.xAxis
-            .axisLabel(this.config.xlabel)
+            .axisLabel(this.config.xlabel !== undefined ? '' : this.config.xlabel)
             .tickFormat(function (d) {
                 return d3.time.format('%x')
                     (new Date(date - (20000 * 86400000) + (d * 86400000)));
             });
 
         this.chart.yAxis
-            .axisLabel(this.config.ylabel)
+            .axisLabel(this.config.ylabel !== undefined ? '' : this.config.ylabel)
             .tickFormat(function (d, i) { return '$' + d3.format(',.1f')(d); });
     }
 

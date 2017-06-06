@@ -1,38 +1,38 @@
 {
-  "name": "ngnvd3",
-  "version": "1.2.2",
-  "private": false,
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/EshwarRachala/angular-d3.git"
-  },
-  "author": {
-    "name": "eshwar rachala",
-    "email": "eshwar.appdev@gmail.com"
-  },
-  "keywords": [
-    "angular",
-    "angular2",
-    "angular4",
-    "nvd3",
-    "ng",
-    "charts",
-    "d3",
-    "webpack",
-    "angular-cli",
-    "angular-service"
-  ],
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/EshwarRachala/angular-d3.git/issues"
-  },
-  "module": "ngnvd3.js",
-  "typings": "ngnvd3.d.ts",
-  "peerDependencies": {
-    "@angular/core": "^2.0.0-rc.4",
-    "rxjs": "^5.1.0",
-    "zone.js": "^0.8.4",
-    "nvd3": "^1.8.5",
-    "d3": "^3.5.17"
-  }
+    "name": "ngnvd3",
+    "version": "1.2.5",
+    "private": false,
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/EshwarRachala/angular-d3.git"
+    },
+    "author": {
+        "name": "eshwar rachala",
+        "email": "eshwar.appdev@gmail.com"
+    },
+    "keywords": [
+        "angular",
+        "angular2",
+        "angular4",
+        "nvd3",
+        "ng",
+        "charts",
+        "d3",
+        "webpack",
+        "angular-cli",
+        "angular-service"
+    ],
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/EshwarRachala/angular-d3.git/issues"
+    },
+    "module": "ngnvd3.js",
+    "typings": "ngnvd3.d.ts",
+    "peerDependencies": {
+        "@angular/core": "^2.0.0-rc.4",
+        "rxjs": "^5.1.0",
+        "zone.js": "^0.8.4",
+        "nvd3": "^1.8.5",
+        "d3": "^3.5.17"
+    }
 }

@@ -41,8 +41,8 @@ export class HMBChartComponent implements OnInit, OnChanges {
         this.chart.yAxis
             .tickFormat(d3.format(',.2f'));
 
-        this.chart.yAxis.axisLabel('Y Axis');
-        this.chart.xAxis.axisLabel('X Axis')
+        this.chart.yAxis.axisLabel(this.config.ylabel !== undefined ? '' : this.config.ylabel);
+        this.chart.xAxis.axisLabel(this.config.xlabel !== undefined ? '' : this.config.xlabel)
             .axisLabelDistance(20);
     }
 

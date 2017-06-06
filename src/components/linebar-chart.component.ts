@@ -31,12 +31,10 @@ export class LineBarChartComponent implements OnInit, OnChanges {
     createChart() {
 
         this.chart = nv.models.linePlusBarChart()
-            .margin({ top: 30, right: 60, bottom: 50, left: 70 })
+            .margin(this.config.margin)
             .x(i => i)
             .y(d => d[1])
             .color(d3.scale.category10().range());
-
-
 
         this.chart.y1Axis
             .tickFormat(d3.format(',f'));

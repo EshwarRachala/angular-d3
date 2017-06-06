@@ -37,8 +37,6 @@ export class CumulativelineChartComponent implements OnInit, OnChanges {
             .useInteractiveGuideline(true);
 
         this.chart.xAxis
-            .tickValues([1078030800000, 1122782400000,
-                1167541200000, 1251691200000])
             .tickFormat(function (d) {
                 return d3.time.format('%x')(new Date(d))
             });

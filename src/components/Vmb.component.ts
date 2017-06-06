@@ -41,14 +41,14 @@ export class VMBChartComponent implements OnInit, OnChanges {
                 .staggerLabels(true);
 
         this.chart.xAxis
-            .axisLabel(this.config.xlabel)
+            .axisLabel(this.config.xlabel !== undefined ? '' : this.config.xlabel)
             .axisLabelDistance(35)
             .showMaxMin(false)
             .tickFormat(d3.format(',.6f'));
         ;
 
         this.chart.yAxis
-            .axisLabel(this.config.ylabel)
+            .axisLabel(this.config.ylabel !== undefined ? '' : this.config.ylabel)
             .axisLabelDistance(-5)
             .tickFormat(d3.format(',.01f'));
     }
