@@ -55,7 +55,8 @@ export class LineBarChartComponent implements OnInit, OnChanges {
         }).showMaxMin(false);
 
         d3.select('#linebar svg')
-            .attr('height', this.config.height)
+            .attr('height', this.config.height !== undefined ?
+                this.config.height : 500)
             .datum(this.config.data)
             .transition()
             .duration(350)

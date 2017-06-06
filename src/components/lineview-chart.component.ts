@@ -32,8 +32,6 @@ export class LineViewChartComponent implements OnInit, OnChanges {
 
         this.chart = nv.models.lineWithFocusChart();
 
-        this.chart.tooltips(true);
-
         this.chart.xAxis
             .tickFormat(d3.format(',f'));
 
@@ -47,7 +45,8 @@ export class LineViewChartComponent implements OnInit, OnChanges {
     updateChart() {
 
         d3.select('#lnvchart svg')
-            .attr('height', this.config.height)
+            .attr('height', this.config.height !== undefined ?
+                this.config.height : 500)
             .datum(this.config.data)
             .transition()
             .duration(350)

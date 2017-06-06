@@ -39,14 +39,14 @@ export class CandlestickChartComponent implements OnInit, OnChanges {
         const date: any = new Date();
 
         this.chart.xAxis
-            .axisLabel(this.config.xlabel)
+            .axisLabel(this.config.xlabel !== undefined ? 'x axis' : this.config.xlabel)
             .tickFormat(function (d) {
                 return d3.time.format('%x')(
                     new Date(date - (20000 * 86400000) + (d * 86400000)));
             });
 
         this.chart.yAxis
-            .axisLabel(this.config.ylabel)
+            .axisLabel(this.config.ylabel !== undefined ? 'x axis' : this.config.ylabel)
             .tickFormat(function (d, i) {
                 return '$' + d3.format(',.1f')(d);
             });
@@ -56,7 +56,8 @@ export class CandlestickChartComponent implements OnInit, OnChanges {
     updateChart() {
 
         d3.select('#candlestick svg')
-            .attr('height', this.config.height)
+            .attr('height', this.config.height !== undefined ?
+                this.config.height : 500)
             .datum(this.config.data)
             .transition()
             .duration(350)

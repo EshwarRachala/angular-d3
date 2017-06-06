@@ -43,7 +43,8 @@ export class VBarComponent implements OnInit, OnChanges {
     updateChart() {
 
         d3.select('#vbar svg')
-            .attr('height', this.config.height)
+            .attr('height', this.config.height !== undefined ?
+                this.config.height : 500)
             .datum(this.config.data)
             .transition()
             .duration(350)
