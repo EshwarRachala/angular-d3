@@ -28,12 +28,14 @@ export class OhlcChartComponent implements OnInit, OnChanges {
     }
 
     createChart() {
+        const margin = this.config.margin !== undefined ?
+            this.config.margin : { left: 100 };
 
         this.chart = nv.models.ohlcBarChart()
             .x(function (d) { return d['date'] })
             .y(function (d) { return d['close'] })
             .duration(250)
-            .margin(this.config.margin);
+            .margin(margin);
 
         const date: any = new Date();
 

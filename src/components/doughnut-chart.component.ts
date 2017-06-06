@@ -29,6 +29,9 @@ export class DoughnutChartComponent implements OnInit, OnChanges {
 
     createChart() {
 
+        const margin = this.config.margin !== undefined ?
+            this.config.margin : { left: 100 };
+
         this.chart = nv.models.pieChart()
             .x(function (d) { return d.label })
             .y(function (d) { return d.value })
@@ -36,7 +39,8 @@ export class DoughnutChartComponent implements OnInit, OnChanges {
             .labelThreshold(.05)
             .labelType('percent')
             .donut(true)
-            .donutRatio(0.35);
+            .donutRatio(0.35)
+            .margin(margin);
     }
 
     updateChart() {

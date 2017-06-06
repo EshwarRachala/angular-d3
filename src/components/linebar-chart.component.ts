@@ -29,9 +29,11 @@ export class LineBarChartComponent implements OnInit, OnChanges {
     }
 
     createChart() {
+        const margin = this.config.margin !== undefined ?
+            this.config.margin : { left: 100 };
 
         this.chart = nv.models.linePlusBarChart()
-            .margin(this.config.margin)
+            .margin(margin)
             .x(i => i)
             .y(d => d[1])
             .color(d3.scale.category10().range());

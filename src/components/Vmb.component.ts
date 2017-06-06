@@ -29,12 +29,16 @@ export class VMBChartComponent implements OnInit, OnChanges {
 
     createChart() {
 
+        const margin = this.config.margin !== undefined ?
+            this.config.margin : { left: 100 };
+
+
         this.chart =
             nv.models.multiBarChart()
                 .barColor(d3.scale.category20().range())
                 .reduceXTicks(true)
                 .duration(350)
-                .margin(this.config.margin)
+                .margin(margin)
                 .rotateLabels(45)
                 .showControls(true)
                 .groupSpacing(0.1)

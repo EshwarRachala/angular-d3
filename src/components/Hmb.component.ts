@@ -28,12 +28,16 @@ export class HMBChartComponent implements OnInit, OnChanges {
     }
 
     createChart() {
+
+        const margin = this.config.margin !== undefined ?
+            this.config.margin : { left: 100 };
+
         this.chart = nv.models.multiBarHorizontalChart()
             .x(d => d.label)
             .y(d => d.value)
             .showValues(true)
             .barColor(d3.scale.category20().range())
-            .margin(this.config.margin)
+            .margin(margin)
             .duration(250)
             .showControls(true)
             .showLegend(true);
@@ -41,12 +45,15 @@ export class HMBChartComponent implements OnInit, OnChanges {
         this.chart.yAxis
             .tickFormat(d3.format(',.2f'));
 
-        this.chart.yAxis.axisLabel(this.config.ylabel !== undefined ? '' : this.config.ylabel);
-        this.chart.xAxis.axisLabel(this.config.xlabel !== undefined ? '' : this.config.xlabel)
+        this.chart.yAxis.axisLabel(this.config.ylabel !== undefined ? ''
+            : this.config.ylabel);
+        this.chart.xAxis.axisLabel(this.config.xlabel !== undefined ? ''
+            : this.config.xlabel)
             .axisLabelDistance(20);
     }
 
     updateChart() {
+
         d3.select('#hmb svg')
             .attr('height', this.config.height !== undefined ?
                 this.config.height : 500)

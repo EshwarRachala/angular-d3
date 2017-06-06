@@ -28,12 +28,15 @@ export class PieChartComponent implements OnInit, OnChanges {
     }
 
     createChart() {
+        const margin = this.config.margin !== undefined ?
+            this.config.margin : { left: 100 };
 
         this.chart = nv.models.pieChart()
             .x(function (d) { return d.label })
             .y(function (d) { return d.value })
             .showLabels(true)
-            .labelThreshold(.05);
+            .labelThreshold(.05)
+            .margin(margin);
     }
 
     updateChart() {

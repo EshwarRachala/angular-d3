@@ -29,9 +29,10 @@ export class SunburstChartComponent implements OnInit, OnChanges {
     }
 
     createChart() {
+        const margin = this.config.margin !== undefined ?
+            this.config.margin : { left: 100 };
 
-        this.chart = nv.models.sunburstChart();
-
+        this.chart = nv.models.sunburstChart().margin(margin);
         this.chart.color(d3.scale.category20c());
     }
 

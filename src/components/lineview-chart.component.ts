@@ -30,7 +30,11 @@ export class LineViewChartComponent implements OnInit, OnChanges {
 
     createChart() {
 
-        this.chart = nv.models.lineWithFocusChart();
+        const margin = this.config.margin !== undefined ?
+            this.config.margin : { left: 100 };
+
+        this.chart = nv.models.lineWithFocusChart()
+            .margin(margin);
 
         this.chart.xAxis
             .tickFormat(d3.format(',f'));

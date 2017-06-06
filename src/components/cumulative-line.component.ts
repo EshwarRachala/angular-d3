@@ -30,11 +30,15 @@ export class CumulativelineChartComponent implements OnInit, OnChanges {
 
     createChart() {
 
+        const margin = this.config.margin !== undefined ?
+            this.config.margin : { left: 100 };
+
         this.chart = nv.models.cumulativeLineChart()
             .x(function (d) { return d[0] })
             .y(function (d) { return d[1] / 100 })
             .color(d3.scale.category10().range())
-            .useInteractiveGuideline(true);
+            .useInteractiveGuideline(true)
+            .margin(margin);
 
         this.chart.xAxis
             .tickFormat(function (d) {

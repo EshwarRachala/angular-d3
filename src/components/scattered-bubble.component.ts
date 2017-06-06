@@ -29,12 +29,16 @@ export class ScatteredBubbleChartComponent implements OnInit, OnChanges {
 
     createChart() {
 
+        const margin = this.config.margin !== undefined ?
+            this.config.margin : { left: 100 };
+
         this.chart = nv.models.scatterChart()
             .showDistX(true)
             .showDistY(true)
             .useVoronoi(true)
             .color(d3.scale.category10().range())
-            .duration(300);
+            .duration(300)
+            .margin(margin);
 
 
         // Axis settings

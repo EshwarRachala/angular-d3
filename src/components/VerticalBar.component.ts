@@ -28,6 +28,8 @@ export class VBarComponent implements OnInit, OnChanges {
     }
 
     createChart() {
+        const margin = this.config.margin !== undefined ?
+            this.config.margin : { left: 100 };
 
         this.chart =
             nv.models.discreteBarChart()
@@ -37,7 +39,8 @@ export class VBarComponent implements OnInit, OnChanges {
                 .showValues(true)
                 .showXAxis(true)
                 .showYAxis(true)
-                .duration(250);
+                .duration(250)
+                .margin(margin);
     }
 
     updateChart() {

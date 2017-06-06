@@ -28,19 +28,23 @@ export class BoxplotChartComponent implements OnInit, OnChanges {
     }
 
     createChart() {
+        const margin = this.config.margin !== undefined ?
+            this.config.margin : { left: 100 };
 
         this.chart = nv.models.boxPlotChart()
             .x(function (d) { return d.label })
             .staggerLabels(true)
             .maxBoxWidth(75)
-            .yDomain([0, 500]);
+            .yDomain([0, 500])
+            .margin(margin);
 
     }
 
     updateChart() {
 
         d3.select('#boxplot svg')
-            .attr('height', this.config.height !== undefined ? 500 : this.config.height)
+            .attr('height', this.config.height !== undefined ? 500
+                : this.config.height)
             .datum(this.config.data)
             .transition()
             .duration(350)

@@ -30,8 +30,11 @@ export class StackedAreaChartComponent implements OnInit, OnChanges {
 
     createChart() {
 
+        const margin = this.config.margin !== undefined ?
+            this.config.margin : { left: 100 };
+
         this.chart = nv.models.stackedAreaChart()
-            .margin(this.config.margin)
+            .margin(margin)
             .x(function (d) { return d[0] })
             .y(function (d) { return d[1] })
             .useInteractiveGuideline(true)
